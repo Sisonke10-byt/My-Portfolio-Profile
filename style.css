@@ -24,6 +24,10 @@ a{
     text-decoration: none;
 }
 
+.left a{
+    font-size: 60px;
+}
+
 /* NAVBAR */
 nav{
     display: flex;
@@ -55,6 +59,7 @@ nav .right a span{
     margin-left: 5px;
 }
 
+
 /*HOME*/
 
 .home-section{
@@ -74,6 +79,43 @@ nav .right a span{
 .home-section .text h2{
     font-size: 45px;
 }
+
+
+.home-section .text h3{
+font-weight: 600;
+}
+
+
+.home-section .text .devops {
+    font-weight: bold;
+    font-size: 24px;
+    color: #2a9df4;
+    display: inline-block;
+    width: 0; /* Start with 0 width */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide content that overflows */
+    border-right: 3px solid #2a9df4; /* Cursor effect */
+    animation: typing 4s steps(10) 1s forwards, blinkCaret 0.75s step-end infinite 4s;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blinkCaret {
+    50% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: #2a9df4;
+    }
+}
+
 
 .home-section .text .links{
     margin-top: 25px;
@@ -136,7 +178,6 @@ nav .right a span{
 }
 
 /* ABOUT*/
-
 .about-section{
     padding: 0 50px;
     margin-bottom: 100px;
@@ -217,46 +258,60 @@ nav .right a span{
 
 /*SKILLS*/
 
-.skills-section{
-    padding: 0 50px;
-    margin-bottom: 100px;
-}
-
-.skills-section h2{
+/* Skills Section Styling */
+#skills {
+    padding: 40px;
+    background-color: #f4f4f4;
     text-align: center;
-    font-size: 35px;
 }
 
-.skills-section .text{
-    text-align: center;
-    margin-bottom: 20px;
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
 }
 
-.skills-section .icons{
+
+/* Text Paragraph Styling */
+.text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 30px auto; /* Center the text with margin */
+}
+
+/* Icons Container */
+.icons {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px; 
-    flex-wrap: wrap; 
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Align icons vertically */
+    gap: 30px; /* Space between icons */
 }
 
-.skills-section .icons i{
-    font-size: 40px; 
-    transition: all 0.3s ease;
-    display: block; 
-    margin-bottom: 5px;
+/* Individual Icon Styling */
+.icon {
+    display: flex;
+    flex-direction: column; /* Stack icon and name vertically */
+    align-items: center; /* Center icon and name horizontally */
+    text-align: center;
+    font-size: 16px;
 }
 
-.skills-section .icons span{
-    display: block; 
-    text-align: center; 
-    font-size: 14px; 
-    font-weight: 500;
+/* Icon styling */
+.icon i {
+    font-size: 200px; /* Icon size */
+    color: #333;
 }
 
-.skills-section .icons i:hover{
-    transform: scale(1.1); 
+/* Span styling under icons */
+.icon span {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
 }
+
 
 
 /*CONTACT*/
@@ -293,7 +348,7 @@ nav .right a span{
   max-width: 600px;
   padding: 40px;
   margin: 0 auto;
-
+  margin-top: -8%;
 }
 
 .reach-section .mycontact form input,
@@ -321,6 +376,7 @@ nav .right a span{
 .reach-section form button:hover{
     filter: brightness(.9);
 }
+
 
 /* Media Queries for Responsiveness */
 
