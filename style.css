@@ -91,10 +91,10 @@ font-weight: 600;
     font-size: 24px;
     color: #2a9df4;
     display: inline-block;
-    width: 0; /* Start with 0 width */
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden; /* Hide content that overflows */
-    border-right: 3px solid #2a9df4; /* Cursor effect */
+    width: 0; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    border-right: 3px solid #2a9df4; 
     animation: typing 4s steps(10) 1s forwards, blinkCaret 0.75s step-end infinite 4s;
 }
 
@@ -223,9 +223,9 @@ font-weight: 600;
 /* Responsive Cards */
 .about-cards {
     display: flex;
-    gap: 30px; /* Space between cards */
+    gap: 30px; 
     justify-content: space-between;
-    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    flex-wrap: wrap; 
     margin-top: 50px;
 }
 
@@ -234,7 +234,7 @@ font-weight: 600;
     border: 2px solid var(--text-color);
     padding: 20px;
     border-radius: 8px;
-    width: 30%; /* Set a fixed width for cards on larger screens */
+    width: 30%; 
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -258,7 +258,7 @@ font-weight: 600;
 
 /*SKILLS*/
 
-/* Skills Section Styling */
+
 #skills {
     padding: 40px;
     background-color: #f4f4f4;
@@ -272,39 +272,39 @@ h2 {
 }
 
 
-/* Text Paragraph Styling */
+
 .text {
     font-size: 16px;
     line-height: 1.6;
     color: #555;
     max-width: 800px;
-    margin: 0 auto 30px auto; /* Center the text with margin */
+    margin: 0 auto 30px auto; 
 }
 
-/* Icons Container */
+
 .icons {
     display: flex;
-    justify-content: center; /* Center the icons horizontally */
-    align-items: center; /* Align icons vertically */
-    gap: 30px; /* Space between icons */
+    justify-content: center; 
+    align-items: center; 
+    gap: 30px; 
 }
 
-/* Individual Icon Styling */
+
 .icon {
     display: flex;
-    flex-direction: column; /* Stack icon and name vertically */
-    align-items: center; /* Center icon and name horizontally */
+    flex-direction: column; 
+    align-items: center; 
     text-align: center;
     font-size: 16px;
 }
 
-/* Icon styling */
+
 .icon i {
-    font-size: 200px; /* Icon size */
+    font-size: 200px; 
     color: #333;
 }
 
-/* Span styling under icons */
+
 .icon span {
     margin-top: 10px;
     font-size: 1.2rem;
@@ -378,73 +378,68 @@ h2 {
 }
 
 
+
+
 /* Media Queries for Responsiveness */
 
-/* Tablets and larger mobile devices */
-@media (max-width: 1024px) {
+/* Tablet (768px) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 20px;
+    }
+
     .home-section {
         flex-direction: column;
-        padding: 0 20px;
-        margin: 30px 0;
+        padding: 20px;
     }
 
-    .home-section .text h2 {
-        font-size: 35px;
+    .home-section .text {
+        flex: 1;
+        text-align: center;
     }
 
-    .about-section h2 {
-        font-size: 30px;
+    .home-section .picture {
+        flex: 1;
+        justify-content: center;
     }
 
     .about-section .aboutme {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
     }
 
-    .about-section .aboutme .text {
-        flex: 1;
-        text-align: center;
+    .about-cards {
+        flex-direction: column;
     }
 
-    .about-cards .card {
+    .card {
         width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .skills-section h2 {
-        font-size: 30px;
-    }
-
-    .skills-section .icons i {
-        font-size: 35px;
+        margin-bottom: 30px;
     }
 
     .reach-section .mycontact form {
-        max-width: 100%;
-        padding: 20px;
+        width: 90%;
     }
 }
 
-/* Small mobile devices */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        padding: 0 20px;
-        height: auto;
-    }
-
+/* Mobile (480px) */
+@media (max-width: 480px) {
     nav .left a {
-        font-size: 20px;
-    }
-
-    .home-section {
-        padding: 0 20px;
-        gap: 30px;
+        font-size: 18px;
     }
 
     .home-section .text h2 {
-        font-size: 30px;
+        font-size: 32px;
+    }
+
+    .home-section .text .devops {
+        font-size: 20px;
+    }
+
+    .home-section .text .links a {
+        font-size: 14px;
+        padding: 8px 16px;
     }
 
     .about-section h2 {
@@ -452,58 +447,25 @@ h2 {
     }
 
     .about-section .aboutme {
-        gap: 20px;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-    .skills-section .icons {
         flex-direction: column;
-        gap: 10px;
     }
 
-    .skills-section .icons i {
-        font-size: 30px;
-    }
-
-    .reach-section .mycontact form {
-        max-width: 100%;
-        padding: 15px;
-    }
-}
-
-/* Smallest devices (portrait mobile) */
-@media (max-width: 480px) {
-    nav {
-        padding: 0 10px;
-    }
-
-    .home-section .text h2 {
-        font-size: 26px;
-    }
-
-    .about-section h2 {
-        font-size: 24px;
-    }
-
-    .card {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .skills-section h2 {
-        font-size: 24px;
-    }
-
-    .skills-section .icons i {
-        font-size: 30px;
+    .about-section .aboutme .information img {
+        width: 150px;
     }
 
     .reach-section .mycontact form {
-        padding: 10px;
+        padding: 20px;
+    }
+
+    .reach-section .mycontact form input,
+    .reach-section .mycontact form textarea {
+        font-size: 14px;
+    }
+
+    .reach-section .mycontact form button {
+        font-size: 14px;
+        height: 40px;
     }
 }
-
 
