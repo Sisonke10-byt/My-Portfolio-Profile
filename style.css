@@ -35,15 +35,44 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: #333;
-    padding: 10px 20px;
+    padding: 30px 20px;
 }
 
-nav .left a{
-    color: white;
+nav .left a {
+    color: white; 
     text-decoration: none;
-    font-size: 40px;
-    font-weight: 600;
+    font-size: 50px; 
+    font-weight: bold;
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    position: relative;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 3px rgba(248, 226, 226, 0.3);
+    background: linear-gradient(145deg, #f1e5e5, white); 
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
+
+nav .left a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transform: rotateX(15deg) rotateY(10deg);
+    z-index: -1;
+}
+
+nav .left a:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg); 
+    box-shadow: 10px 10px 15px rgba(236, 226, 226, 0.3), -10px -10px 20px rgba(243, 226, 226, 0.3); 
+}
+
 
 nav .right {
     display: flex;
@@ -88,18 +117,23 @@ nav .right a.download-cv:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
-    margin: 50px 0;
-    margin-bottom: 100px;
-    gap: 40px;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
 }
 
 .home-section .text{
-    flex: 5;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
 }
 
-.home-section .text h2{
-    font-size: 45px;
+.home-section .text h1{
+    font-size: 50px;
 }
 
 
@@ -110,14 +144,16 @@ font-weight: 600;
 
 .home-section .text .devops {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 28px;
     color: #2a9df4;
     display: inline-block;
     width: 0; 
     white-space: nowrap; 
     overflow: hidden; 
     border-right: 3px solid #2a9df4; 
-    animation: typing 4s steps(10) 1s forwards, blinkCaret 0.75s step-end infinite 4s;
+    animation: typing 5s steps(28) infinite, blinkCaret 0.75s step-end infinite 8s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
 }
 
 @keyframes typing {
@@ -137,21 +173,25 @@ font-weight: 600;
         border-color: #2a9df4;
     }
 }
-
-
-.home-section .text .links{
-    margin-top: 25px;
+ 
+.home-section .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
 }
 
-.home-section .text .links i{
+.home-section .text .wordicons {
+    display: flex;
+    margin-top: 25px; 
+    align-items: flex-start; 
+}
+
+.home-section .text .wordicons i {
     color: var(--text-color);
 }
 
-.home-section .text .links span{
-    color: var(--text-color);
-}
 
-.home-section .text .links a{
+.home-section .text .wordicons a {
     display: inline-block;
     padding: 5px 10px;
     border: 2px solid var(--text-color);
@@ -161,32 +201,46 @@ font-weight: 600;
     transition: 1s;
 }
 
-.home-section .text .links a:hover{
+
+.home-section .text .wordicons a:hover {
     color: var(--link-color);
-    border: 2px solid var(--link-color);
-    background-color: var(--link-color);
+    border: 2px solid #2a9df4;
+    background-color: #2a9df4;
 }
 
 .home-section .picture{
-    flex: 2;
-    display: flex;
-    justify-content: right;
+    flex: 1;
+    text-align: right;
+    position: relative;
 }
 
-.home-section .picture img{
-    width: 350px;
-    border-radius: 50%;
+.home-section .picture img {
+    width: 65%;  
+    height: 60%; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    position: relative;
+    left: -1in;
+}
+
+
+.home-section .picture img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); 
 }
 
 /* ABOUT*/
 .about-section{
     padding: 0 50px;
     margin-bottom: 100px;
+    background-color: #ffffff;
 }
 
 .about-section h2{
     font-size: 35px;
     margin-bottom: 30px;
+    padding-top: 40px;
     text-align: center;
 }
 
@@ -256,6 +310,10 @@ font-weight: 600;
     font-size: 16px;
     color: #333;
 }
+
+.home-section + .about-section{
+    border-top: 5px solid #2a9df4;
+}  
 
 /*SKILLS*/
 
