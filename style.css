@@ -31,11 +31,16 @@ a{
 /* NAVBAR */
 
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* You can change this color */
+    z-index: 1000; /* Ensure navbar stays on top */
+    padding: 30px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 30px 20px;
 }
 
 nav .left a {
@@ -73,10 +78,16 @@ nav .left a:hover {
     box-shadow: 10px 10px 15px rgba(236, 226, 226, 0.3), -10px -10px 20px rgba(243, 226, 226, 0.3); 
 }
 
+body{
+    padding-top: 120px;
+}
+
 
 nav .right {
     display: flex;
+    justify-content: flex-end;
     gap: 20px;
+    flex: 1;
 }
 
 nav .right a {
