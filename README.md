@@ -1,7 +1,3 @@
-Certainly! Below is the updated README file with the profile link included:
-
----
-
 # README for Sisonke's Portfolio
 
 ## Overview
