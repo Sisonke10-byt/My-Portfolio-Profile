@@ -318,11 +318,12 @@ font-weight: 600;
     margin-top: 30px;
 }
 
-.text h3 {
+.text h2 {
     font-size: 30px;
     color: #333;
     margin-bottom: 20px;
     text-align: center;
+    padding-top: 40px;
 }
 
 .education-item {
@@ -334,7 +335,7 @@ font-weight: 600;
 }
 
 .education-item h4 {
-    font-size: 24px;
+    font-size: 20px;
     color: #333;
 }
 
@@ -349,8 +350,7 @@ font-weight: 600;
     color: #333;
 }
 
-/* About Cards */
-.about-cards {
+.education{
     display: flex;
     gap: 30px;
     justify-content: center;
@@ -358,7 +358,7 @@ font-weight: 600;
     margin-top: 50px;
 }
 
-.card {
+.education-item {
     background-color: #fff;
     border: 2px solid var(--text-color);
     padding: 20px;
@@ -370,24 +370,24 @@ font-weight: 600;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.education-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.card h3 {
+.education-item h3 {
     font-size: 22px;
     margin-bottom: 15px;
     color: var(--text-color);
 }
 
-.card p {
+.education-item p {
     font-size: 16px;
     color: #333;
     line-height: 1.5;
 }
 
-.about-cards {
+.education{
     display: flex;
     gap: 30px;
     justify-content: center;
@@ -395,7 +395,7 @@ font-weight: 600;
     margin-top: 50px;
 }
 
-.card {
+.education-item {
     background-color: #fff;
     border: 2px solid var(--text-color);
     padding: 20px;
@@ -407,18 +407,18 @@ font-weight: 600;
     min-width: 250px; /* Ensure that cards don't shrink too much */
 }
 
-.card:hover {
+.education-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.card h3 {
+.education-item h3 {
     font-size: 22px;
     margin-bottom: 15px;
     color: var(--text-color);
 }
 
-.card p {
+.card .education-item {
     font-size: 16px;
     color: #333;
     line-height: 1.5;
@@ -427,9 +427,7 @@ font-weight: 600;
 /*SKILLS*/
 
 .Myskills-section{
-    padding: 50px 20px;
     background-color: #99a9b4;
-    margin-bottom: 100px;
     text-align: center;
 }
 
@@ -451,7 +449,6 @@ font-weight: 600;
 .skills-section {
     padding: 50px;
     background-color: #99a9b4;
-    margin-bottom: 100px;
 }
 
 .skills-container {
@@ -501,9 +498,8 @@ font-weight: 600;
 /*CONTACT*/
 
 .reach-section{
-    padding: 0 50px;
-    margin-bottom: 100px;
     display: grid;
+    background-color: #f3f8fc;
 }
 
 .reach-section h2{
