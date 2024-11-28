@@ -45,6 +45,15 @@
             <span>Download CV</span>
         </a>
     </div>
+
+    <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Close Icon for the mobile menu -->
+    <div class="close-menu" id="closeMenu">
+        <i class="fas fa-times"></i>
+    </div>
 </nav>
 
 <main>
@@ -187,7 +196,23 @@
             <div class="text">
                 <p>I’d love to hear from you! Whether you’re interested in collaborating on a project, discussing potential opportunities,<br>
                  or just want to connect, feel free to reach out.</p>
+                 <a href="#" id="contactLink">Click here for contact information</a>
                 </div>
+    </div>
+</div>
+
+<!-- Popup for Contact Information -->
+<div id="contactPopup" class="popup">
+    <div class="popup-content">
+        <span id="closePopup" class="close">&times;</span>
+        <h2>Contact Information</h2>
+        <p>Email: <a href="mailto:your-email@example.com">sisonkeboyilani@capaciti.org.za</a></p>
+        <p>Phone: <a href="tel:+1234567890">+27 765759788</a></p>
+        <p>Address: 4757 Radebee Street, Ext2, Orange Farm</p>
+    </div>
+</div>      
+
+<div id="forms" class="MyForm">
 
                 <form action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="2f180413-f629-4fe6-bcb9-11106dcfb53f">
@@ -202,6 +227,7 @@
 
                     <button type="submit">Send Message</button>
                 </form>
+            </div>
          
             </section>  
 
@@ -224,5 +250,7 @@
     </div>
 </footer>
 </main>
+<script src="script.js"></script>
+
     </body>
 </html>

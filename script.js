@@ -5,38 +5,52 @@
  * Date: November 2024
  */
 
-"use strict";
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the hamburger button, close button, and the nav menu
+    const hamburger = document.getElementById("hamburger");
+    const closeMenu = document.getElementById("closeMenu");
+    const navRight = document.querySelector("nav .right");
 
-// Declare global variables
-let modal, btn, span;
+    // Open the menu when the hamburger icon is clicked
+    hamburger.addEventListener("click", function() {
+        navRight.style.display = "flex";
+        closeMenu.style.display = "block";
+        hamburger.style.display = "none";
+    });
 
-// Helper function to open the modal
-function openModal() {
-    modal.style.display = "block";
-}
+    // Close the menu when the close icon is clicked
+    closeMenu.addEventListener("click", function() {
+        navRight.style.display = "none";
+        closeMenu.style.display = "none";
+        hamburger.style.display = "block";
+    });
+});
 
-// Helper function to close the modal
-function closeModal() {
-    modal.style.display = "none";
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const contactLink = document.getElementById("contactLink");
+    const contactPopup = document.getElementById("contactPopup");
+    const closePopup = document.getElementById("closePopup");
 
-// Event listener for DOMContentLoaded to ensure all elements are available
-document.addEventListener("DOMContentLoaded", function () {
-    // Get the modal and button elements after the DOM is fully loaded
-    modal = document.getElementById("contactModal");
-    btn = document.getElementById("contactBtn");
-    span = document.getElementById("closeBtn");
+    // Open the popup when the link is clicked
+    contactLink.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        contactPopup.style.display = "block";
+    });
 
-    // Add event listener to open the modal
-    btn.addEventListener('click', openModal);
+    // Close the popup when the close button is clicked
+    closePopup.addEventListener("click", function() {
+        contactPopup.style.display = "none";
+    });
 
-    // Add event listener to close the modal
-    span.addEventListener('click', closeModal);
-
-    // Close modal if clicked outside
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            closeModal();
+    // Close the popup if the user clicks anywhere outside the popup
+    window.addEventListener("click", function(event) {
+        if (event.target === contactPopup) {
+            contactPopup.style.display = "none";
         }
     });
 });
+
+
+
+
+
