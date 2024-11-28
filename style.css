@@ -17,6 +17,8 @@ html{
 body{
     font-family: "Roboto", sans-serif;;
     background-color: var(--background-color);
+    height: 100%;
+    scroll-snap-type: y mandatory;
 }
 
 a{
@@ -41,6 +43,39 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+nav a {
+    text-decoration: none;              
+    position: relative;                 
+    color: #333;                       
+    padding: 5px 10px;  
+    font-weight: bold;                
+}
+
+
+nav a:hover {
+    color: #3498db;                    
+}
+
+
+nav a::after {
+    content: '';                         
+    position: absolute;                  
+    left: 0;                             
+    bottom: 0;                           
+    width: 100%;                         
+    height: 2px;                         
+    background-color: #3498db;           
+    transform: scaleX(0);                
+    transform-origin: bottom right;      
+    transition: transform 0.3s ease;    
+}
+
+
+nav a:hover::after {
+    transform: scaleX(1);                
+    transform-origin: bottom left;      
 }
 
 nav .left a {
@@ -101,6 +136,7 @@ nav .right a i {
     margin-right: 8px;
 }
 
+
 nav .right a.download-cv {
     display: inline-block;
     padding: 10px 20px;
@@ -114,7 +150,6 @@ nav .right a.download-cv {
     margin-top: 2px;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
-
 
 nav .right a.download-cv:hover {
     background-color: var(--text-color);
@@ -226,10 +261,12 @@ font-weight: 600;
 }
 
 .home-section .picture img {
-    width: 65%;  
-    height: 60%; 
+    width: 50%;  
+    height: 50%; 
     border-radius: 50%; 
+    border: 5px solid #e0085b;
     object-fit: cover; 
+    box-shadow: 0 4px 8px #e0085b;
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     position: relative;
     left: -1in;
@@ -244,15 +281,16 @@ font-weight: 600;
  /* ABOUT SECTION */
  
  .about-section {
-    padding: 50px;
     background-color: #ffffff;
+    height: 100vh;
+    padding-top: 30px;
 }
 
 .about-section h2 {
     font-size: 35px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     text-align: center;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -269,9 +307,9 @@ font-weight: 600;
 
 .aboutme .information {
     text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
+   
 }
+
 
 .aboutme .information img {
     width: 200px;
@@ -280,50 +318,25 @@ font-weight: 600;
     object-fit: cover;
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-    animation: zoomIn 1.5s ease forwards;
+    border: 5px solid #3498db;  
+    position: relative;
+    animation: rotate-border 5s infinite linear;
 }
 
-@keyframes zoomIn {
+
+@keyframes rotate-border {
     0% {
-        transform: scale(0.8);
-        opacity: 0;
+        transform: rotate(0deg); 
+        border-color: #3498db;   
+    }
+    50% {
+        transform: rotate(180deg); 
+        border-color: #e0085b;    
     }
     100% {
-        transform: scale(1);
-        opacity: 1;
+        transform: rotate(360deg); 
+        border-color: #3498db;     /
     }
-}
-
-
-
-.aboutme .information h3 {
-    font-size: 24px;
-    color: var(--text-color);
-    margin-bottom: 15px;
-}
-
-.aboutme .information p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.aboutme .information .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #2a9df4;
-    color: white;
-    border-radius: 5px;
-    font-size: 16px;
-    text-decoration: none;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-.aboutme .information .btn:hover {
-    background-color: #1c76c3;
 }
 
 
@@ -444,6 +457,7 @@ font-weight: 600;
 .Myskills-section{
     background-color: #99a9b4;
     text-align: center;
+    
 }
 
 .Myskills-section h2{
