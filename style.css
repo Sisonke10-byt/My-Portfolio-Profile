@@ -2,6 +2,7 @@
     --text-color: #333;
     --link-color: #4a76ee;
     --background-color: #eeeff1;
+    --item-color: #e0085b; 
 }
 
 *{
@@ -530,65 +531,61 @@ font-weight: 600;
     padding-bottom: 70px;
 }
 
+/* Popup Styling */
 .popup {
-    display: none; 
-    position: fixed; 
+    display: none;  
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0, 0, 0, 0.5); 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);  
+    justify-content: center;
+    align-items: center;
     z-index: 1000; 
-    justify-content: center; 
-    align-items: center; 
-    margin: auto auto auto auto;
 }
-
 
 .popup-content {
-    background-color: #fff; 
+    background-color: var(--item-color);
     padding: 20px;
-    border-radius: 8px; 
-    max-width: 400px; 
-    width: 100%; 
-    text-align: center; 
-    justify-content: center;
+    border-radius: 10px;
+    width: 38%;
+    max-width: 500px;
+    padding-top: 10px;
+    text-align: center;
 }
 
+.popup h2 {
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    color: white;
+}
 
-.close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
+.popup a{
+    color: white;
+}
+
+.popup .close {
     position: absolute;
     top: 10px;
-    right: 20px;
+    right: 10px;
+    font-size: 24px;
     cursor: pointer;
 }
 
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+#contactSection {
+    position: relative;
 }
 
-.mycontact a{
-    color: var(--link-color);
+#contactPopup {
+    display: flex;  
+    justify-content: center;
+    align-items: center;
 }
-
-
-.popup-content h2{
-    color: var(--text-color);
- }
-
- p{
-    color: #333;
- }
 
  /*FORM*/
-
 
 * {
     margin: 0;
@@ -667,6 +664,7 @@ footer {
 
 .footer-content p {
     margin: 0;
+    color: white;
 }
 
 .social-links a {
