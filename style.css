@@ -1,5 +1,5 @@
 :root{
-    --text-color: black;
+    --text-color: #333;
     --link-color: #4a76ee;
     --background-color: #eeeff1;
 }
@@ -552,7 +552,7 @@ font-weight: 600;
     max-width: 400px; 
     width: 100%; 
     text-align: center; 
-
+    justify-content: center;
 }
 
 
@@ -573,6 +573,90 @@ font-weight: 600;
     text-decoration: none;
     cursor: pointer;
 }
+
+.mycontact a{
+    color: var(--link-color);
+}
+
+
+.popup-content h2{
+    color: var(--text-color);
+ }
+
+ p{
+    color: #333;
+ }
+
+ /*FORM*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.MyForm {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 8px; 
+    width: 100%;
+    max-width: 500px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.MyForm label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+
+.MyForm input[type="text"],
+.MyForm input[type="email"],
+.MyForm textarea {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 16px; 
+    color: #333; 
+    background-color: #f9f9f9; 
+}
+
+
+.MyForm input:focus,
+.MyForm textarea:focus {
+    border-color: #e0085b; 
+    outline: none;
+    background-color: #fff; 
+}
+
+
+.MyForm button {
+    background-color: #e0085b; 
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px; 
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%; 
+    transition: background-color 0.3s ease;
+}
+
+
+.MyForm button:hover {
+    background-color: #e0085b; 
+}
+
+
+
+/*FOOTER*/
+
 
 footer {
     background-color: #333;

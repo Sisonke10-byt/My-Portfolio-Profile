@@ -214,16 +214,17 @@
 
 <div id="forms" class="MyForm">
 
-                <form action="https://api.web3forms.com/submit" method="POST">
+              <form action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="2f180413-f629-4fe6-bcb9-11106dcfb53f">
+
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" required>
+                    <input type="text" name="name" id="name" pattern="A-Z" required placeholder="Enter Full Name">
 
                     <label for="email">Email</label>
-                    <input type="email"name="email" id="email" required>
+                    <input type="email"name="email" id="email" required placeholder="Enter email">
 
                     <label for="Message">Message</label>
-                    <textarea id="Message" name="Message"cols="30" rows="10" required></textarea>
+                    <textarea id="Message" name="Message"cols="30" rows="10" required ></textarea>
 
                     <button type="submit">Send Message</button>
                 </form>
