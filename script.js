@@ -5,43 +5,48 @@
  * Date: November 2024
  */
 
-document.addEventListener("DOMContentLoaded", function() {
-    const hamburger = document.getElementById("hamburger");
-    const closeMenu = document.getElementById("closeMenu");
-    const navRight = document.querySelector("nav .right");
+// Wait for the DOM to be fully loaded before attaching event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const closeIcon = document.getElementById('closeIcon');
+    const navLinks = document.getElementById('navLinks');
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
 
-    hamburger.addEventListener("click", function() {
-        navRight.style.display = "flex";
-        closeMenu.style.display = "block";
-        hamburger.style.display = "none";
+    // Toggle the navigation menu and icon when the hamburger icon is clicked
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.add('active'); // Show the mobile menu
+        hamburgerIcon.style.display = 'none'; // Hide the hamburger icon
+        closeIcon.style.display = 'block'; // Show the close icon
     });
 
-    closeMenu.addEventListener("click", function() {
-        navRight.style.display = "none";
-        closeMenu.style.display = "none";
-        hamburger.style.display = "block";
+    // Close the navigation menu and icon when the close icon is clicked
+    closeIcon.addEventListener('click', function() {
+        navLinks.classList.remove('active'); // Hide the mobile menu
+        hamburgerIcon.style.display = 'block'; // Show the hamburger icon
+        closeIcon.style.display = 'none'; // Hide the close icon
     });
 });
 
-// Get the popup and link elements
+
+
 const popup = document.getElementById('contactPopup');
 const closePopup = document.getElementById('closePopup');
 const contactLink = document.getElementById('contactLink');
 
-// When the user clicks the "Click here to view contact information" link, show the popup
+
 contactLink.addEventListener('click', function() {
-    popup.style.display = 'flex'; // Show the popup
+    popup.style.display = 'flex'; 
 });
 
-// When the user clicks the close button, hide the popup
+
 closePopup.addEventListener('click', function() {
-    popup.style.display = 'none'; // Hide the popup
+    popup.style.display = 'none'; 
 });
 
-// Optional: Close the popup if the user clicks outside of the popup content
+
 window.addEventListener('click', function(event) {
     if (event.target === popup) {
-        popup.style.display = 'none'; // Hide the popup
+        popup.style.display = 'none';
     }
 });
 

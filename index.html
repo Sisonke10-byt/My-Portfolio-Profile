@@ -13,48 +13,84 @@
 
     <link rel="stylesheet" href="style.css">
     
-
     <title>My Portfolio Profile</title>
 </head>
 <body>
 
     <!--NAVBAR-->
-<nav>
-    <div class="left">
-        <a href="index.html ">SISONKE</a>
-    </div>
+    <nav>
+        <div class="left">
+            <a href="index.html">SISONKE</a>
+        </div>
 
-    <div class="right">
-        <a href="#about">
-            <i class="fa-regular fa-pen-to-square"></i>
-            <span>About</span>
-        </a> 
+         <!-- This is the Hamburger icon -->
+         <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars" id="hamburgerIcon"></i> <!-- Hamburger Icon -->
+            <i class="fas fa-times" id="closeIcon" style="display:none;"></i> <!-- Close Icon (Hidden initially) -->
+        </div>
 
-        <a href="#skills">
-            <i class="fa-solid fa-code"></i>
-            <span>Skills</span>
-        </a>
-        
-        <a href="#contact">
-            <i class="fa-solid fa-envelope"></i>
-            <span>Contact</span>
-        </a>
+        <!-- The navigation links container -->
+        <div class="right" id="navLinks">
 
-        <a href="./Sisonke Boyilani- CV (1).docx" download="Sisonke Boyilani- CV (1).docx" class="download-cv">
-            <i class="fa-solid fa-download"></i>
-            <span>Download CV</span>
-        </a>
-    </div>
+            <!-- Navigation Links -->
+            <a href="#about">
+                <i class="fa-regular fa-pen-to-square"></i>
+                <span>About</span>
+            </a> 
 
-    <div class="hamburger" id="hamburger">
-        <i class="fas fa-bars"></i>
-    </div>
+            <a href="#skills">
+                <i class="fa-solid fa-code"></i>
+                <span>Skills</span>
+            </a>
+            
+            <a href="#contact">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Contact</span>
+            </a>
 
-    <!-- Close Icon for the mobile menu -->
-    <div class="close-menu" id="closeMenu">
-        <i class="fas fa-times"></i>
-    </div>
-</nav>
+            <a href="./Sisonke Boyilani- CV (1).docx" download="Sisonke Boyilani- CV (1).docx" class="download-cv">
+                <i class="fa-solid fa-download"></i>
+                <span>Download CV</span>
+            </a>
+        </div>
+    </nav>
+
+    <!--HOME-->
+    <section class="home-section">
+        <div class="text">
+            <h1>Hello, I'm Sisonke</h1>
+            <h2><span class="devops">An aspiring DevOps Engineer</span></h2>
+            <p>I’m a DevOps Engineer Intern with a growing passion for automating processes, managing cloud infrastructures, and enhancing software delivery pipelines. 
+                <ul>
+                    <li>Currently, I’m focused on expanding my hands-on experience with DevOps practices and tools, while exploring the world of continuous integration, containerization, and infrastructure automation.</li>
+                    <li>I am proficient in web development technologies like HTML, CSS, and JavaScript.</li>
+                    <li>I adapt quickly to new environments, technologies, and project requirements, making me well suited to fast-paced and evolving tech roles.</li>
+                </ul>
+            </p>
+            <div class="wordicons">
+            <a href="https://github.com/Sisonke10-byt" target="_blank" rel="nooper no-referrer">
+                <i class="fa-brands fa-github"></i>  
+            </a>
+    
+            <a href="https://www.linkedin.com/in/sisonkesamkele" target="_blank" rel="nooper no-referrer">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+    
+            <a href="#contact" class="social-link email" target="_blank" rel="nooper no-referrer">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+        </div>
+
+        <div class="picture">
+            <img src="myimage.jpg" alt="my image">
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
 
     <!--HOME-->
     <section class="home-section">

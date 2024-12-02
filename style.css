@@ -145,26 +145,78 @@ nav .left a:hover {
     box-shadow: 10px 10px 15px rgba(236, 226, 226, 0.3), -10px -10px 20px rgba(243, 226, 226, 0.3); 
 }
 
-nav .hamburger,
-nav .close-menu {
+/* Default styling for the hamburger and navigation links */
+.hamburger {
+    display: none; /* Hidden on larger screens */
+    cursor: pointer;
+}
+
+.right {
+    display: none;
+    gap: 1rem;
+}
+
+.close-menu{
     display: none;
 }
 
-nav .hamburger {
-    display: block;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-}
+/* Mobile menu styles (max-width 768px) */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;  /* Show the hamburger icon on smaller screens */
+        cursor: pointer;
+        color: white;
+        font-size: 30px;
+    }
 
-nav .close-menu {
-    display: block;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
+    /* Hide the links by default */
+    .right {
+        display: none;
+        flex-direction: column;  /* Stack links vertically */
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #fff;  /* Background color for the mobile menu */
+        z-index: 10;  /* Make sure the menu is on top */
+        padding: 1rem;
+    }
+
+    /* Show the links when the menu is active */
+    .right.active {
+        display: flex;  /* Show the menu */
+    }
+
+    .right a {
+        margin: 10px 0;  /* Space out the links */
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    /* Close button styles */
+    .close-menu {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: white;
+    }
+
+    /* Styling the individual navigation links */
+    .right a i {
+        margin-right: 8px;
+    }
+
+    /* When the menu is open, hide the hamburger and show the close icon */
+    .hamburger i.fa-bars {
+        display: block;
+    }
+
+    .hamburger i.fa-times {
+        display: none;
+    }
 }
 
 /*HOME*/
@@ -655,14 +707,6 @@ footer {
         width: 100%;
         background-color: #e0085b;
         padding: 20px;
-    }
-
-    nav .hamburger {
-        display: block;
-    }
-
-    nav .close-menu {
-        display: block;
     }
 
     .home-section {
