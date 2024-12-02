@@ -51,45 +51,42 @@ window.addEventListener('click', function(event) {
 });
 
 // chatbot.js
-
-// Declare variables for the chatbot window and icon
 const chatbotIcon = document.getElementById("chatbot-icon");
 const chatbotWindow = document.getElementById("chatbot-window");
 const closeButton = document.getElementById("close-chatbot");
 const chatbotMessage = document.getElementById("chatbot-message");
 
-// Function to toggle the chatbot window visibility
+
 function toggleChatbot() {
-    // Use control structures to toggle the chatbot window
+    
     if (chatbotWindow.style.display === "none" || chatbotWindow.style.display === "") {
-        chatbotWindow.style.display = "block"; // Show the chatbot window
+        chatbotWindow.style.display = "block"; 
     } else {
-        chatbotWindow.style.display = "none"; // Hide the chatbot window
+        chatbotWindow.style.display = "none"; 
     }
 }
 
-// Function to close the chatbot window
+
 function closeChatbot() {
-    chatbotWindow.style.display = "none"; // Hide the chatbot window
+    chatbotWindow.style.display = "none";
 }
 
-// Event listener for opening the chatbot
+
 chatbotIcon.addEventListener("click", toggleChatbot);
 
-// Event listener for closing the chatbot
+
 closeButton.addEventListener("click", closeChatbot);
 
-// Function to change the chatbot message
 function changeChatbotMessage(newMessage) {
-    // Checking if the newMessage is a string (data type check)
+    
     if (typeof newMessage === "string") {
-        chatbotMessage.innerText = newMessage; // Update the message
+        chatbotMessage.innerText = newMessage; 
     } else {
         console.error("The message must be a string.");
     }
 }
 
-// Example of updating the message (this can be expanded further)
+
 setTimeout(() => {
     changeChatbotMessage("We are here to help! Ask me anything.");
 }, 5000);
