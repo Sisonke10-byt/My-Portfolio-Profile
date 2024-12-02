@@ -87,44 +87,6 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
-</body>
-</html>
-
-
-    <!--HOME-->
-    <section class="home-section">
-        <div class="text">
-            <h1>Hello, I'm Sisonke</h1>
-            <h2><span class="devops">An aspiring DevOps Engineer</span></h2>
-            <p>I’m a DevOps Engineer Intern with a growing passion for automating processes, managing cloud infrastructures, and enhancing software delivery pipelines. 
-                <ul>
-                    <li>Currently, I’m focused on expanding my hands-on experience with DevOps practices and tools, while exploring the world of continuous integration, containerization, and infrastructure automation.</li>
-                    <li>I am proficient in web development technologies like HTML, CSS, and JavaScript.</li>
-                    <li>I adapt quickly to new environments, technologies, and project requirements, making me well suited to fast-paced and evolving tech roles.</li>
-                </ul>
-            </p>
-            <div class="wordicons">
-            <a href="https://github.com/Sisonke10-byt" target="_blank" rel="nooper no-referrer">
-                <i class="fa-brands fa-github"></i>  
-            </a>
-    
-            <a href="https://www.linkedin.com/in/sisonkesamkele" target="_blank" rel="nooper no-referrer">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-    
-            <a href="#contact" class="social-link email" target="_blank" rel="nooper no-referrer">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-        </div>
-        </div>
-
-        <div class="picture">
-            <img src="myimage.jpg" alt="my image">
-        </div>
-    </section>
-
-
 <!--ABOUT-->
 
 <section id="about" class="about-section">
@@ -259,6 +221,28 @@
         </form>
     </div>
 </section>
+
+<!--CHATBOT-->
+
+       <!-- Chatbot Button -->
+       <div class="chatbot-button" id="chatbotButton" onclick="toggleChatbot()">
+        <i class="fas fa-comments"></i>
+    </div>
+    
+    <!-- Chatbot Popup -->
+    <div class="chatbot-popup" id="chatbotPopup">
+        <div class="chatbot-header">
+            <h4>Chat with me!</h4>
+            <span class="close-chat" onclick="toggleChatbot()">×</span>
+        </div>
+        <div class="chatbot-body" id="chatbotBody">
+            <p>Hi! How can I help you today?</p>
+        </div>
+        <div class="chatbot-footer">
+            <textarea id="userMessage" placeholder="Type your message..." oninput="updateSendButton()"></textarea>
+            <button id="sendButton" onclick="sendMessage()" disabled>Send</button>
+        </div>
+    </div>
 
 <!-- FOOTER-->
 
