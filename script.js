@@ -5,38 +5,51 @@
  * Date: November 2024
  */
 
-"use strict";
+// Wait for the DOM to be fully loaded before attaching event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const closeIcon = document.getElementById('closeIcon');
+    const navLinks = document.getElementById('navLinks');
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
 
-// Declare global variables
-let modal, btn, span;
+    // Toggle the navigation menu and icon when the hamburger icon is clicked
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.add('active'); // Show the mobile menu
+        hamburgerIcon.style.display = 'none'; // Hide the hamburger icon
+        closeIcon.style.display = 'block'; // Show the close icon
+    });
 
-// Helper function to open the modal
-function openModal() {
-    modal.style.display = "block";
-}
-
-// Helper function to close the modal
-function closeModal() {
-    modal.style.display = "none";
-}
-
-// Event listener for DOMContentLoaded to ensure all elements are available
-document.addEventListener("DOMContentLoaded", function () {
-    // Get the modal and button elements after the DOM is fully loaded
-    modal = document.getElementById("contactModal");
-    btn = document.getElementById("contactBtn");
-    span = document.getElementById("closeBtn");
-
-    // Add event listener to open the modal
-    btn.addEventListener('click', openModal);
-
-    // Add event listener to close the modal
-    span.addEventListener('click', closeModal);
-
-    // Close modal if clicked outside
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            closeModal();
-        }
+    // Close the navigation menu and icon when the close icon is clicked
+    closeIcon.addEventListener('click', function() {
+        navLinks.classList.remove('active'); // Hide the mobile menu
+        hamburgerIcon.style.display = 'block'; // Show the hamburger icon
+        closeIcon.style.display = 'none'; // Hide the close icon
     });
 });
+
+
+
+const popup = document.getElementById('contactPopup');
+const closePopup = document.getElementById('closePopup');
+const contactLink = document.getElementById('contactLink');
+
+
+contactLink.addEventListener('click', function() {
+    popup.style.display = 'flex'; 
+});
+
+
+closePopup.addEventListener('click', function() {
+    popup.style.display = 'none'; 
+});
+
+
+window.addEventListener('click', function(event) {
+    if (event.target === popup) {
+        popup.style.display = 'none';
+    }
+});
+
+
+
+
