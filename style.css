@@ -358,6 +358,10 @@ nav .left a:hover {
     padding-top: 30px;
 }
 
+.anchor-link{
+    scroll-margin: 120px;
+}
+
 .about-section h2 {
     font-size: 35px;
     font-weight: bold;
@@ -544,6 +548,7 @@ nav .left a:hover {
     justify-content: center;
     min-height: 100vh;
 }
+    
 
 .reach-section h2 {
     font-size: 35px;
