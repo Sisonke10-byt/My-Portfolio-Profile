@@ -50,95 +50,49 @@ window.addEventListener('click', function(event) {
     }
 });
 
-//CHATBOT
-    // Initialize chatbot state
-    let chatbotOpen = false; // Boolean to check if chatbot is open
-    let chatHistory = []; // Array to store user and bot messages
+// chatbot.js
 
-    // DOM elements
-    const chatbotPopup = document.getElementById("chatbotPopup");
-    const chatbotButton = document.getElementById("chatbotButton");
-    const chatbotBody = document.getElementById("chatbotBody");
-    const userMessageInput = document.getElementById("userMessage");
-    const sendButton = document.getElementById("sendButton");
+// Declare variables for the chatbot window and icon
+const chatbotIcon = document.getElementById("chatbot-icon");
+const chatbotWindow = document.getElementById("chatbot-window");
+const closeButton = document.getElementById("close-chatbot");
+const chatbotMessage = document.getElementById("chatbot-message");
 
-    // Toggle the chatbot open/close
-    function toggleChatbot() {
-        chatbotOpen = !chatbotOpen; // Toggle state
-        if (chatbotOpen) {
-            chatbotPopup.style.display = "block"; // Show chatbot
-            chatbotButton.style.display = "none"; // Hide the button
-        } else {
-            chatbotPopup.style.display = "none"; // Hide chatbot
-            chatbotButton.style.display = "block"; // Show button
-        }
+// Function to toggle the chatbot window visibility
+function toggleChatbot() {
+    // Use control structures to toggle the chatbot window
+    if (chatbotWindow.style.display === "none" || chatbotWindow.style.display === "") {
+        chatbotWindow.style.display = "block"; // Show the chatbot window
+    } else {
+        chatbotWindow.style.display = "none"; // Hide the chatbot window
     }
+}
 
-    // Update the send button based on input
-    function updateSendButton() {
-        // If the user types anything in the message input, enable the button
-        if (userMessageInput.value.trim() !== "") {
-            sendButton.disabled = false;
-        } else {
-            sendButton.disabled = true;
-        }
+// Function to close the chatbot window
+function closeChatbot() {
+    chatbotWindow.style.display = "none"; // Hide the chatbot window
+}
+
+// Event listener for opening the chatbot
+chatbotIcon.addEventListener("click", toggleChatbot);
+
+// Event listener for closing the chatbot
+closeButton.addEventListener("click", closeChatbot);
+
+// Function to change the chatbot message
+function changeChatbotMessage(newMessage) {
+    // Checking if the newMessage is a string (data type check)
+    if (typeof newMessage === "string") {
+        chatbotMessage.innerText = newMessage; // Update the message
+    } else {
+        console.error("The message must be a string.");
     }
+}
 
-    // Function to handle message sending
-    function sendMessage() {
-        const userMessage = userMessageInput.value.trim();
-        if (userMessage !== "") {
-            // Add user message to chat history (array)
-            chatHistory.push({ sender: "user", message: userMessage });
-            updateChatbotUI();
-            userMessageInput.value = ""; // Clear input field
-            sendButton.disabled = true; // Disable the send button again
-
-            // Simulate bot's reply after 1 second
-            setTimeout(() => {
-                const botReply = getBotReply(userMessage); // Get bot's response
-                chatHistory.push({ sender: "bot", message: botReply });
-                updateChatbotUI();
-            }, 1000);
-        }
-    }
-
-    // Update the UI to reflect the chat history
-    function updateChatbotUI() {
-        // Clear the previous chat
-        chatbotBody.innerHTML = "";
-        // Loop through the chat history and display messages
-        chatHistory.forEach(chat => {
-            const messageElement = document.createElement("p");
-            messageElement.textContent = chat.message;
-            messageElement.classList.add(chat.sender === "user" ? "user-message" : "bot-message");
-            chatbotBody.appendChild(messageElement);
-        });
-        // Scroll to the bottom of the chat
-        chatbotBody.scrollTop = chatbotBody.scrollHeight;
-    }
-
-    // Function to get the bot's response (can be enhanced with more logic)
-    function getBotReply(userMessage) {
-        // Basic control structures to generate bot response based on user input
-        if (userMessage.toLowerCase().includes("hello")) {
-            return "Hi there! How can I help you today?";
-        } else if (userMessage.toLowerCase().includes("bye")) {
-            return "Goodbye! Have a great day!";
-        } else if (userMessage.toLowerCase().includes("help")) {
-            return "Sure, what do you need help with?";
-        } else {
-            return "Sorry, I didn't understand that. Could you please rephrase?";
-        }
-    }
-
-    // Close the chatbot if clicked outside the popup
-    window.onclick = function(event) {
-        if (event.target === chatbotPopup || event.target === chatbotButton) return; // Ignore clicks inside chatbot
-        if (chatbotOpen) {
-            toggleChatbot(); // Close chatbot when clicked outside
-        }
-    }
+// Example of updating the message (this can be expanded further)
+setTimeout(() => {
+    changeChatbotMessage("We are here to help! Ask me anything.");
+}, 5000);
 
 
 
