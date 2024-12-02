@@ -23,16 +23,16 @@
             <a href="index.html">SISONKE</a>
         </div>
 
-         <!-- This is the Hamburger icon -->
+        
          <div class="hamburger" id="hamburger">
-            <i class="fas fa-bars" id="hamburgerIcon"></i> <!-- Hamburger Icon -->
-            <i class="fas fa-times" id="closeIcon" style="display:none;"></i> <!-- Close Icon (Hidden initially) -->
+            <i class="fas fa-bars" id="hamburgerIcon"></i> 
+            <i class="fas fa-times" id="closeIcon" style="display:none;"></i> 
         </div>
 
-        <!-- The navigation links container -->
+        
         <div class="right" id="navLinks">
 
-            <!-- Navigation Links -->
+            
             <a href="#about">
                 <i class="fa-regular fa-pen-to-square"></i>
                 <span>About</span>
@@ -235,10 +235,13 @@
     </div>
     <div class="chatbot-body">
         <p id="chatbot-message">Hello! How can I help you today?</p>
+                <input type="text" id="chatbot-input" placeholder="Ask me anything..." onkeydown="handleUserInput(event)">
+            </div>
+        </div>
+            
         <!-- More chatbot content can go here -->
     </div>
 </div>
-
 
 <!-- FOOTER-->
 

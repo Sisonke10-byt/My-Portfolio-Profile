@@ -88,8 +88,11 @@ function changeChatbotMessage(newMessage) {
 
 
 setTimeout(() => {
-    changeChatbotMessage("We are here to help! Ask me anything.");
+    changeChatbotMessage("What would you like to know!");
 }, 5000);
+
+
+
 
 
 
