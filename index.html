@@ -222,27 +222,23 @@
     </div>
 </section>
 
-<!--CHATBOT-->
+<!-- Chatbot Icon -->
+<div id="chatbot-icon" class="chatbot-icon">
+    <i class="fa fa-comments"></i>
+</div>
 
-       <!-- Chatbot Button -->
-       <div class="chatbot-button" id="chatbotButton" onclick="toggleChatbot()">
-        <i class="fas fa-comments"></i>
+<!-- Chatbot Window -->
+<div id="chatbot-window" class="chatbot-window">
+    <div class="chatbot-header">
+        <span>Chat with Sisonke!</span>
+        <button id="close-chatbot" class="close-btn">X</button>
     </div>
-    
-    <!-- Chatbot Popup -->
-    <div class="chatbot-popup" id="chatbotPopup">
-        <div class="chatbot-header">
-            <h4>Chat with me!</h4>
-            <span class="close-chat" onclick="toggleChatbot()">×</span>
-        </div>
-        <div class="chatbot-body" id="chatbotBody">
-            <p>Hi! How can I help you today?</p>
-        </div>
-        <div class="chatbot-footer">
-            <textarea id="userMessage" placeholder="Type your message..." oninput="updateSendButton()"></textarea>
-            <button id="sendButton" onclick="sendMessage()" disabled>Send</button>
-        </div>
+    <div class="chatbot-body">
+        <p id="chatbot-message">Hello! How can I help you today?</p>
+        <!-- More chatbot content can go here -->
     </div>
+</div>
+
 
 <!-- FOOTER-->
 
