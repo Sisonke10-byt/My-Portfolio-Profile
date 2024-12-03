@@ -23,16 +23,16 @@
             <a href="index.html">SISONKE</a>
         </div>
 
-         <!-- This is the Hamburger icon -->
+        
          <div class="hamburger" id="hamburger">
-            <i class="fas fa-bars" id="hamburgerIcon"></i> <!-- Hamburger Icon -->
-            <i class="fas fa-times" id="closeIcon" style="display:none;"></i> <!-- Close Icon (Hidden initially) -->
+            <i class="fas fa-bars" id="hamburgerIcon"></i> 
+            <i class="fas fa-times" id="closeIcon" style="display:none;"></i> 
         </div>
 
-        <!-- The navigation links container -->
+        
         <div class="right" id="navLinks">
 
-            <!-- Navigation Links -->
+            
             <a href="#about">
                 <i class="fa-regular fa-pen-to-square"></i>
                 <span>About</span>
@@ -222,24 +222,6 @@
     </div>
 </section>
 
-<!-- Chatbot Icon -->
-<div id="chatbot-icon" class="chatbot-icon">
-    <i class="fa fa-comments"></i>
-</div>
-
-<!-- Chatbot Window -->
-<div id="chatbot-window" class="chatbot-window">
-    <div class="chatbot-header">
-        <span>Chat with Sisonke!</span>
-        <button id="close-chatbot" class="close-btn">X</button>
-    </div>
-    <div class="chatbot-body">
-        <p id="chatbot-message">Hello! How can I help you today?</p>
-        <!-- More chatbot content can go here -->
-    </div>
-</div>
-
-
 <!-- FOOTER-->
 
 <footer>
@@ -258,6 +240,33 @@
         </div>
     </div>
 </footer>
+
+
+<!-- CHATBOT -->
+
+<!-- CHATBOT ICON -->
+<div id="chatbotIcon" onclick="toggleChatbot()">
+    <i class="fas fa-comment-dots"></i>
+</div>
+
+<!-- CHATBOT -->
+<div id="chatbot">
+    <div id="chatbox">
+        <!-- Heading for the Chatbot -->
+        <h3>Chat with Me!</h3>
+
+        <!-- Close Button -->
+        <i id="closeChatbot" class="fas fa-times" onclick="closeChatbot()"></i>
+        
+        <div id="chatlog"></div>
+        <input type="text" id="userInput" placeholder="Ask me about my profile..." />
+        
+        <!-- Send Icon -->
+        <i id="sendIcon" class="fas fa-paper-plane" onclick="processInput()"></i>
+    </div>
+</div>
+
+
 <script src="script.js"></script>
 </body>
 </html>

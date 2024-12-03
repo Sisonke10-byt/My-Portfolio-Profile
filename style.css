@@ -673,67 +673,119 @@ nav .left a:hover {
 
 /*CHATBOT*/
 
-.chatbot-icon {
+/* Chatbot Icon Styles */
+#chatbotIcon {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #e0085b;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
     color: white;
-    padding: 15px;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    z-index: 9999;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Ensures the icon is above other content */
 }
 
-.chatbot-icon:hover {
-    background-color: #3498db;
+#chatbotIcon:hover {
+    background-color: #0056b3;
 }
 
-
-.chatbot-window {
+/* Initially hide the chatbot */
+#chatbot {
     position: fixed;
-    bottom: 80px;
+    bottom: 80px; /* Place it a bit higher than the icon */
     right: 20px;
     width: 300px;
     height: 400px;
-    background-color: white;
+    background-color: #fff;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    display: none;  /* Hidden by default */
-    z-index: 9998;
-    overflow: hidden;
-    border: 2px solid #e0085b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    display: none; /* Hidden initially */
+    z-index: 9998; /* Just below the icon */
+    display: none;
 }
 
+#chatbox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
-.chatbot-header {
-    background-color: #e0085b;
+/* Chat log styles */
+#chatlog {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    max-height: 250px;
+}
+
+#chatlog div {
+    margin: 5px 0;
+}
+
+/* Input field styles */
+#userInput {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for the Send Icon */
+#sendIcon {
+    font-size: 30px;
+    color: #007bff;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: flex-end; /* Aligns it to the right of the input */
+    transition: color 0.3s ease;
+}
+
+#sendIcon:hover {
+    color: #0056b3;
+}
+
+/* Style the Chatbot Heading */
+#chatbox h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 10px 0;
+    padding: 0;
+    text-align: center;
+    background-color: #007bff;
     color: white;
     padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
+    border-radius: 6px;
 }
 
-.close-btn {
-    background-color: transparent;
-    border: none;
-    color: white;
+/* Style the Close Button */
+#closeChatbot {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     font-size: 18px;
-    cursor: pointer;
-}
-
-.chatbot-body {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-}
-
-.chatbot-body p {
-    font-size: 16px;
     color: #333;
+    cursor: pointer;
+    z-index: 10000; /* Ensures it's above the rest of the content */
+    transition: color 0.3s ease;
 }
+
+#closeChatbot:hover {
+    color: var(--item-color) /* Red on hover */
+}
+
 
 
 /*FOOTER*/
