@@ -246,6 +246,15 @@
 
 <!-- CHATBOT ICON -->
 <div id="chatbotIcon" onclick="toggleChatbot()">
+    <i class="fa-regular fa-comments"></i>
+</div>
+
+<!-- CHATBOT -->
+
+   <div id="chatbot">
+    <div id="chatbox">
+        
+
     <i class="fas fa-comment-dots"></i>
 </div>
 
@@ -253,10 +262,22 @@
 <div id="chatbot">
     <div id="chatbox">
         <!-- Heading for the Chatbot -->
+
         <h3>Chat with Me!</h3>
 
         <!-- Close Button -->
         <i id="closeChatbot" class="fas fa-times" onclick="closeChatbot()"></i>
+
+        <div id="chatlog"></div>
+        <input type="text" id="userInput" placeholder="Ask me about my profile..." />
+        
+        
+        <i id="sendIcon" class="fas fa-paper-plane" onclick="processInput()"></i>
+
+    </div>
+</div>
+
+
         
         <div id="chatlog"></div>
         <input type="text" id="userInput" placeholder="Ask me about my profile..." />
@@ -265,6 +286,7 @@
         <i id="sendIcon" class="fas fa-paper-plane" onclick="processInput()"></i>
     </div>
 </div>
+
 
 
 <script src="script.js"></script>
