@@ -680,7 +680,7 @@ nav .left a:hover {
     right: 20px;
     width: 60px;
     height: 60px;
-    background-color: #007bff;
+    background-color: var(--item-color);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -693,13 +693,13 @@ nav .left a:hover {
 }
 
 #chatbotIcon:hover {
-    background-color: #0056b3;
+    background-color: var(--item-color);
 }
 
 /* Initially hide the chatbot */
 #chatbot {
     position: fixed;
-    bottom: 80px; /* Place it a bit higher than the icon */
+    bottom: 85px; /* Place it a bit higher than the icon */
     right: 20px;
     width: 300px;
     height: 400px;
@@ -711,7 +711,6 @@ nav .left a:hover {
     font-family: Arial, sans-serif;
     display: none; /* Hidden initially */
     z-index: 9998; /* Just below the icon */
-    display: none;
 }
 
 #chatbox {
@@ -745,7 +744,7 @@ nav .left a:hover {
 /* Style for the Send Icon */
 #sendIcon {
     font-size: 30px;
-    color: #007bff;
+    color: var(--item-color);
     cursor: pointer;
     margin-top: 10px;
     align-self: flex-end; /* Aligns it to the right of the input */
@@ -753,7 +752,7 @@ nav .left a:hover {
 }
 
 #sendIcon:hover {
-    color: #0056b3;
+    color: var(--item-color);
 }
 
 /* Style the Chatbot Heading */
@@ -764,26 +763,26 @@ nav .left a:hover {
     margin: 0 0 10px 0;
     padding: 0;
     text-align: center;
-    background-color: #007bff;
+    background-color: var(--item-color);
     color: white;
     padding: 10px;
     border-radius: 6px;
 }
 
-/* Style the Close Button */
+
 #closeChatbot {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     font-size: 18px;
-    color: #333;
+    color:white;
     cursor: pointer;
     z-index: 10000; /* Ensures it's above the rest of the content */
     transition: color 0.3s ease;
 }
 
 #closeChatbot:hover {
-    color: var(--item-color) /* Red on hover */
+    color: #333; /* Red on hover */
 }
 
 
