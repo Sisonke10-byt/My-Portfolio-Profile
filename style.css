@@ -673,7 +673,6 @@ nav .left a:hover {
 
 /*CHATBOT*/
 
-/* Chatbot Icon Styles */
 #chatbotIcon {
     position: fixed;
     bottom: 20px;
@@ -681,6 +680,7 @@ nav .left a:hover {
     width: 60px;
     height: 60px;
     background-color: var(--item-color);
+    background-color: #007bff;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -689,17 +689,18 @@ nav .left a:hover {
     cursor: pointer;
     font-size: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 9999; /* Ensures the icon is above other content */
+    z-index: 9999; 
 }
 
 #chatbotIcon:hover {
     background-color: var(--item-color);
+    background-color: #0056b3;
 }
 
-/* Initially hide the chatbot */
 #chatbot {
     position: fixed;
-    bottom: 85px; /* Place it a bit higher than the icon */
+    bottom: 85px; 
+    bottom: 80px; 
     right: 20px;
     width: 300px;
     height: 400px;
@@ -709,8 +710,9 @@ nav .left a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
     font-family: Arial, sans-serif;
-    display: none; /* Hidden initially */
-    z-index: 9998; /* Just below the icon */
+    display: none; 
+    z-index: 9998; 
+    display: none;
 }
 
 #chatbox {
@@ -745,6 +747,7 @@ nav .left a:hover {
 #sendIcon {
     font-size: 30px;
     color: var(--item-color);
+    color: #007bff;
     cursor: pointer;
     margin-top: 10px;
     align-self: flex-end; /* Aligns it to the right of the input */
@@ -753,6 +756,7 @@ nav .left a:hover {
 
 #sendIcon:hover {
     color: var(--item-color);
+    color: #0056b3;
 }
 
 /* Style the Chatbot Heading */
@@ -764,6 +768,7 @@ nav .left a:hover {
     padding: 0;
     text-align: center;
     background-color: var(--item-color);
+    background-color: #007bff;
     color: white;
     padding: 10px;
     border-radius: 6px;
@@ -776,13 +781,14 @@ nav .left a:hover {
     right: 20px;
     font-size: 18px;
     color:white;
-    cursor: pointer;
-    z-index: 10000; /* Ensures it's above the rest of the content */
+    z-index: 10000;
     transition: color 0.3s ease;
 }
 
+
 #closeChatbot:hover {
-    color: #333; /* Red on hover */
+    color: #333;
+    color: var(--item-color) 
 }
 
 
