@@ -244,50 +244,52 @@
 
 <!-- CHATBOT -->
 
-<!-- CHATBOT ICON -->
-<div id="chatbotIcon" onclick="toggleChatbot()">
-    <i class="fa-regular fa-comments"></i>
+<div id="chatbot-icon" class="chat-icon">
+    <i class="fa fa-comments"></i>
 </div>
 
-<!-- CHATBOT -->
 
-   <div id="chatbot">
-    <div id="chatbox">
+<div id="chatbot-section" style="display:none;">
+    <div class="chatbot-header">
+        <h3>Chat with Me</h3>
+        <button id="close-chatbot" class="close-chatbot-btn">&times;</button>
+    </div>
+    <div id="chatbot-window">
+        <div id="chatbot-messages">
+        </div>
+
+        <div class="chatbot-input-area">
+            <input type="text" id="user-input" placeholder="Ask me something..." />
+            
+            
+            <div class="chatbot-icons">
+                
+                <button id="emoji-icon" title="Insert Emoji">
+                    <i class="fas fa-smile"></i>
+                </button>
+                
+                
+                <button id="link-icon" title="Insert Link">
+                    <i class="fas fa-link"></i>
+                </button>
+            </div>
+
+            <
+            <button id="send-message">Send</button>
+        </div>
+    </div>
+
+    
+    <div id="emoji-picker" class="emoji-picker">
+        <span class="emoji" data-emoji="😊">😊</span>
+        <span class="emoji" data-emoji="😂">😂</span>
+        <span class="emoji" data-emoji="😢">😢</span>
+        <span class="emoji" data-emoji="😍">😍</span>
+        <span class="emoji" data-emoji="😎">😎</span>
+        <span class="emoji" data-emoji="😜">😜</span>
         
-
-    <i class="fas fa-comment-dots"></i>
-</div>
-
-<!-- CHATBOT -->
-<div id="chatbot">
-    <div id="chatbox">
-        <!-- Heading for the Chatbot -->
-
-        <h3>Chat with Me!</h3>
-
-        <!-- Close Button -->
-        <i id="closeChatbot" class="fas fa-times" onclick="closeChatbot()"></i>
-
-        <div id="chatlog"></div>
-        <input type="text" id="userInput" placeholder="Ask me about my profile..." />
-        
-        
-        <i id="sendIcon" class="fas fa-paper-plane" onclick="processInput()"></i>
-
     </div>
 </div>
-
-
-        
-        <div id="chatlog"></div>
-        <input type="text" id="userInput" placeholder="Ask me about my profile..." />
-        
-        <!-- Send Icon -->
-        <i id="sendIcon" class="fas fa-paper-plane" onclick="processInput()"></i>
-    </div>
-</div>
-
-
 
 <script src="script.js"></script>
 </body>

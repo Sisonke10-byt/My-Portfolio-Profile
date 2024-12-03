@@ -52,64 +52,130 @@ window.addEventListener('click', function(event) {
 
 //CHATBOT
 
-// Toggle the chatbot visibility
-function toggleChatbot() {
-    const chatbot = document.getElementById('chatbot');
-    if (chatbot.style.display === "none" || chatbot.style.display === "") {
-        chatbot.style.display = "block"; // Show chatbot
-    } else {
-        chatbot.style.display = "none"; // Hide chatbot
+// Define the chatbot's responses and keywords
+const chatbotResponses = {
+    "hello": "Hi there! How can I help you today?",
+    "hi": "Hello there! How can I help you today?",
+    "how are you": "Great!. how can i help you",
+    "about me": "I am Sisonke Boyilani, a recent graduate with a diploma in Information Technology Management, currently working as a DevOps Intern. My focus is on automating processes, managing cloud infrastructures, and enhancing software delivery pipelines.",
+    "skills": "I am proficient in HTML, CSS, JavaScript. My Soft Skills include communication, where I can effectively articulate complex concepts and ideas to both technical and non-technical stakeholders. I excel at problem-solving, approaching challenges creatively and finding efficient solutions. I'm highly adaptable to new situations and thrive in dynamic environments, which is vital in the ever-evolving field of DevOps. Furthermore, I am a strong advocate for teamwork, working collaboratively with colleagues to achieve common goals and streamline processes. On the Technical Skills side,",
+    "education": "I graduated with a Diploma in Information Technology Management from Rosebank College.",
+    "contact": "You can reach me at sisonkeboyilani@capaciti.org.za or call +27 765759788.",
+    "cv": "You can download my CV by clicking the 'Download CV' button in the navigation menu. It contains more detailed information about my experience and education.",
+    "portfolio": "You can view my portfolio and projects on GitHub and LinkedIn. I have worked on creating my porfolio profile so far",
+    "projects": "Portfolio Profile bu currently working on a new project",
+    "github": "Check out my GitHub profile [here](https://github.com/Sisonke10-byt) for my latest repositories and projects.",
+    "linkedin": "Connect with me on LinkedIn [here](https://www.linkedin.com/in/sisonkesamkele).",
+    "default": "Sorry, I didn't understand that. Can you ask something else?",
+};
+
+// Function to send user message to the chatbot
+function sendMessage() {
+    const userInput = document.getElementById('user-input').value.trim().toLowerCase();
+    if (userInput !== "") {
+        // Display user message in the chat window
+        displayMessage(userInput, "user");
+
+        // Generate bot response based on user input
+        let botResponse = chatbotResponses[userInput] || chatbotResponses["default"];
+
+        // Display bot response in the chat window
+        displayMessage(botResponse, "chatbot");
+
+        // Clear the input field after sending the message
+        document.getElementById('user-input').value = "";
     }
 }
 
-// Close the chatbot when the close button is clicked
-function closeChatbot() {
-    const chatbot = document.getElementById('chatbot');
-    chatbot.style.display = "none"; // Hide the chatbot
-}
-
-// Process the user input (e.g., display the message in chatlog)
-function processInput() {
-    const userInput = document.getElementById('userInput').value;
-    if (userInput) {
-        const chatlog = document.getElementById('chatlog');
-        
-        // Display user input
-        const userMessage = document.createElement('div');
-        userMessage.textContent = "You: " + userInput;
-        chatlog.appendChild(userMessage);
-        
-        document.getElementById('userInput').value = ''; // Clear input after sending
-
-        // Simulate a chatbot response
-        const botResponse = document.createElement('div');
-        botResponse.textContent = "Bot: " + getBotResponse(userInput);
-        chatlog.appendChild(botResponse);
-
-        chatlog.scrollTop = chatlog.scrollHeight; // Scroll to the bottom of the chatlog
+// Function to display a message in the chat window
+function displayMessage(message, sender) {
+    const messagesDiv = document.getElementById('chatbot-messages');
+    const messageDiv = document.createElement('div');
+    
+    // Create message content based on sender
+    if (sender === "user") {
+        messageDiv.classList.add('chatbot-message');
+        messageDiv.textContent = "You: " + message;
+    } else if (sender === "chatbot") {
+        messageDiv.classList.add('chatbot-response');
+        messageDiv.textContent = "Chatbot: " + message;
     }
+
+    
+    messagesDiv.appendChild(messageDiv);
+
+    
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
-// Function to return the chatbot's response based on user input
-function getBotResponse(userInput) {
-    const responses = {
-        "hello": "Hi there! How can I help you today?",
-        "who are you": "I'm Sisonke, a DevOps Intern passionate about automation, cloud infrastructure, and continuous integration. How can I assist you?",
-        "what do you do": "I am currently working as a DevOps Intern, focusing on automating processes and managing cloud infrastructures. I also work with CI/CD pipelines and cloud platforms like AWS and Azure.",
-        "what are your skills": "I have strong skills in HTML, CSS, JavaScript, as well as experience with DevOps tools and practices such as Docker, Jenkins, and Kubernetes.",
-        "what is your background": "I recently graduated with a Diploma in Information Technology Management from Rosebank College. My studies covered IT infrastructure, systems management, and network administration.",
-        "where did you study": "I studied Information Technology Management at Rosebank College from 2020 to 2023. I also have a National Senior Certificate from Indwe High School (2019).",
-        "what projects have you worked on": "I've worked on several projects involving web development (HTML, CSS, JS), setting up CI/CD pipelines, and automating cloud infrastructure deployments. Currently, I'm enhancing my hands-on experience with various DevOps tools.",
-        "tell me about your education": "I hold a Diploma in Information Technology Management from Rosebank College (2020-2023). I also completed my National Senior Certificate in 2019 at Indwe High School.",
-        "what is your current job": "I’m currently a DevOps Intern where I focus on building automation pipelines, managing cloud infrastructure, and optimizing software development workflows.",
-        "what are your career goals": "My goal is to become a proficient DevOps Engineer, contributing to building and maintaining reliable, scalable, and automated systems. I aim to improve the efficiency of development processes while keeping the systems secure and scalable.",
-        "what do you want to learn next": "I’m eager to learn more about advanced DevOps practices, including microservices architecture, Kubernetes orchestration, and containerization using Docker.",
-        "how can I contact you": "You can contact me via email at sisonkeboyilani@capaciti.org.za or through my LinkedIn and GitHub profiles. Would you like more information?",
-        "where are you based": "I’m based in Orange Farm, South Africa. Feel free to reach out if you're in the area or online!",
-        "what tools do you use": "I work with tools such as Jenkins for CI/CD, Docker for containerization, Kubernetes for orchestration, and AWS for cloud infrastructure management. I also use Git for version control.",
-        "default": "Sorry, I didn't understand that. Could you rephrase? Feel free to ask me about my background, skills, education, or projects!"
-    };
+document.getElementById('send-message').addEventListener('click', sendMessage);
 
-    // Check if the response exists in the predefined responses
-    return responses[userInput.toLowerCase()] || responses["default"];
+
+document.getElementById('user-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
+});
+
+
+document.getElementById('chatbot-icon').addEventListener('click', function() {
+    document.getElementById('chatbot-section').style.display = 'block';
+    document.getElementById('chatbot-icon').style.display = 'none';
+});
+
+
+document.getElementById('close-chatbot').addEventListener('click', function() {
+    document.getElementById('chatbot-section').style.display = 'none';
+    document.getElementById('chatbot-icon').style.display = 'block';
+});
+
+
+document.getElementById('emoji-icon').addEventListener('click', function() {
+    const emojiPicker = document.getElementById('emoji-picker');
+    emojiPicker.style.display = emojiPicker.style.display === 'block' ? 'none' : 'block';
+});
+
+document.querySelectorAll('.emoji').forEach(function(emoji) {
+    emoji.addEventListener('click', function() {
+        const selectedEmoji = emoji.getAttribute('data-emoji');
+        const userInput = document.getElementById('user-input');
+        userInput.value += selectedEmoji; 
+        document.getElementById('emoji-picker').style.display = 'none'; 
+        userInput.focus(); 
+    });
+});
+
+
+document.getElementById('link-icon').addEventListener('click', function() {
+    const link = prompt('Enter the URL to insert:');
+    if (link) {
+        const userInput = document.getElementById('user-input');
+        userInput.value += `<a href="${link}" target="_blank">${link}</a>`; 
+        userInput.focus(); 
+    }
+});
+
+
+document.getElementById('send-message').addEventListener('click', function() {
+    const userInput = document.getElementById('user-input').value;
+    if (userInput.trim() !== '') {
+        addMessage(userInput, 'user');
+        document.getElementById('user-input').value = ''; 
+    }
+});
+
+
+function addMessage(message, sender) {
+    const messageContainer = document.createElement('div');
+    messageContainer.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+    messageContainer.innerHTML = message;
+    document.getElementById('chatbot-messages').appendChild(messageContainer);
+    document.getElementById('chatbot-messages').scrollTop = document.getElementById('chatbot-messages').scrollHeight; // Scroll to bottom
 }
+
+
+document.getElementById('close-chatbot').addEventListener('click', function() {
+    document.getElementById('chatbot-section').style.display = 'none';
+});
+
+
