@@ -709,19 +709,6 @@ nav .left a:hover {
 }
 
 
-.close-chatbot-btn {
-    background: none;
-    border: none;
-    font-size: 30px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.close-chatbot-btn:hover {
-    color: #f44336;
-}
-
-
 #chatbot-section {
     position: fixed;
     bottom: 20px;
@@ -782,6 +769,20 @@ nav .left a:hover {
 }
 
 .close-chatbot-btn:hover {
+    color: #333;
+}
+
+#minimize-chatbot {
+    background: transparent;
+    border: none;
+    font-size: 20px; /* Customize the font size of the minimize button */
+    cursor: pointer;
+    margin-right: 30px;  /* Space between minimize and close button */
+    color: white;
+    font-weight: 600px;
+}
+
+#minimize-chatbot:hover{
     color: #333;
 }
 
