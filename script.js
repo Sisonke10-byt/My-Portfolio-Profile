@@ -56,7 +56,7 @@ window.addEventListener('click', function(event) {
 const chatbotResponses = {
     "greeting": {
         keywords: ["hello", "hi", "hey", "howdy", "good morning", "good evening"],
-        response: "Hi there! How can I help you today?"
+        response: "Hey! What can I do for you?"
     },
     "how_are_you": {
         keywords: ["how are you", "how's it going", "how are things", "what's up"],
@@ -66,6 +66,11 @@ const chatbotResponses = {
         keywords: ["about you", "who are you", "tell me about yourself"],
         response: "I am Sisonke Boyilani, a recent graduate with a diploma in Information Technology Management, currently working as a DevOps Intern."
     },
+
+    "Experience":[
+        keywords: ["experience"],
+        response: ""
+    ],
     "skills": {
         keywords: ["skills", "what can you do", "what are your skills"],
         response: "I am proficient in HTML, CSS, JavaScript, and more. I have strong communication and problem-solving skills, as well as technical expertise in DevOps practices."
@@ -108,6 +113,16 @@ function sendMessage() {
         displayMessage(userInput, "user");
 
         // Generate bot response based on keywords
+
+
+
+
+
+
+
+
+
+
         let botResponse = getBotResponse(userInput);
 
         // Display bot response
