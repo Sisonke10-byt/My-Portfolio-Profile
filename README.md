@@ -30,7 +30,7 @@ The chatbot provides responses to queries like:
 "What are your skills?"
 "Where can I find your GitHub?"
 "Tell me about your experience."
-9. 88Social Media Integration**: Social media icons (GitHub, LinkedIn, Email) provide quick links to Sisonke's professional profiles.
+9. **Social Media Integration**: Social media icons (GitHub, LinkedIn, Email) provide quick links to Sisonke's professional profiles.
 
 ---
 
