@@ -13,18 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.getElementById('navLinks');
     const hamburgerIcon = document.getElementById('hamburgerIcon');
 
-    hamburger.addEventListener('click', function() {
-        navLinks.classList.add('active'); 
-        hamburgerIcon.style.display = 'none'; 
-        closeIcon.style.display = 'block'; 
-    });
-
-    
-    closeIcon.addEventListener('click', function() {
-        navLinks.classList.remove('active'); 
-        hamburgerIcon.style.display = 'block'; 
-        closeIcon.style.display = 'none'; 
-    });
+// Toggle the class 'active' to show/hide navLinks
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // Toggle visibility
+    hamburgerIcon.style.display = navLinks.classList.contains('active') ? 'none' : 'block';
+    closeIcon.style.display = navLinks.classList.contains('active') ? 'block' : 'none';
+});   
 
 });
 

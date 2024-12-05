@@ -68,10 +68,6 @@ nav .right a i {
     margin-right: 8px;
 }
 
-nav .right a:hover {
-    color: #3498db;                    
-}
-
 nav .right a::after {
     content: '';                         
     position: absolute;                  
@@ -168,19 +164,6 @@ nav .left a:hover {
         cursor: pointer;
         color: white;
         font-size: 30px;
-    }
-
-    
-    .right {
-        display: none;
-        flex-direction: column;  
-        width: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: #fff;  
-        z-index: 10;  
-        padding: 1rem;
     }
 
     
@@ -859,6 +842,7 @@ nav .left a:hover {
     background-color: #f0f0f0;
     border-radius: 50%;
 }
+
 
 /* For small devices (phones in portrait mode) */
 @media (max-width: 600px) {
