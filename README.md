@@ -1,8 +1,10 @@
 # README for Sisonke's Portfolio
 
 ## Overview
+This project represents a personal portfolio website for Sisonke Boyilani, a DevOps Intern and a recent graduate in Information Technology Management. The portfolio is designed to showcase skills, experience, projects, and contact information. The website also features interactive elements such as a hamburger menu, contact modal, and a chatbot for visitor interaction.
 
-This is my personal portfolio, a DevOps Intern with a passion for web development and continuous integration. The site highlights my skills, experience, and contact details, acting as an online profile to showcase my professional background. You can view the live portfolio [here](https://sisonke10-byt.github.io/My-Portfolio-Profile/).
+The project utilizes HTML, CSS, and JavaScript, with integrations for social media links, file download (CV), and a chatbot powered by pre-defined responses based on user input.
+You can view the live portfolio [here](https://sisonke10-byt.github.io/My-Portfolio-Profile/).
 
 The portfolio includes the following sections:
 - **Home**: Introduction with a brief description of my professional aspirations and skills.
@@ -20,15 +22,26 @@ The portfolio includes the following sections:
 3. **Contact Form**: Users can directly send messages to me via a form, integrated with Web3Forms API for submissions.
 4. **Downloadable CV**: A link to download my CV in DOCX format.
 5. **Icons**: Font Awesome icons are used throughout the site to represent different technologies and actions like social media links and skills.
+6. **Responsive Design**: The website is fully responsive and adjusts its layout for both mobile and desktop views.
+7. **Hamburger Menu**: A toggleable hamburger menu is implemented for mobile devices, allowing for a compact navigation bar.
+8. **Chatbot Interaction**: A chatbot allows visitors to ask questions and receive responses based on predefined keywords, enhancing interactivity.
+The chatbot provides responses to queries like:
+"Who are you?"
+"What are your skills?"
+"Where can I find your GitHub?"
+"Tell me about your experience."
+9. 88Social Media Integration**: Social media icons (GitHub, LinkedIn, Email) provide quick links to Sisonke's professional profiles.
 
 ---
 
 ## File Structure
 
-- **index.html**: The main HTML file that structures the content of the portfolio website.
-- **style.css**: The CSS file that styles the website and ensures it is visually appealing and responsive.
-- **myimage.jpg**: Placeholder image of my for the homepage.
-- **aboutImage.jpg**: Placeholder image for the "About" section.
+|-- index.html         # Main HTML file for the portfolio
+|-- style.css          # Stylesheet for the website's design
+|-- script.js          # JavaScript file for functionality (modal, chatbot, etc.)
+|-- myimage.jpg        # Profile picture for homepage
+|-- aboutImage.jpg     # Image for the About section
+|-- Sisonke Boyilani- CV (1).docx  # CV file for download
 
 ---
 
@@ -75,9 +88,55 @@ To use this portfolio website locally on your system, follow these steps:
 
 ---
 
+Functionality Breakdown
+1. Hamburger Menu (script.js)
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburgerIcon.style.display = navLinks.classList.contains('active') ? 'none' : 'block';
+    closeIcon.style.display = navLinks.classList.contains('active') ? 'block' : 'none';
+});
+
+2. Contact Popup (script.js)
+contactLink.addEventListener('click', function() {
+    popup.style.display = 'flex';
+});
+
+closePopup.addEventListener('click', function() {
+    popup.style.display = 'none';
+});
+
+3. Chatbot (script.js)
+The chatbot is powered by predefined responses mapped to specific keywords. The chatbot detects the user’s input and provides a relevant response based on the keywords. Emojis can also be added to the conversation by selecting from an emoji picker.
+
+Sending a Message:
+When the user sends a message, it is displayed in the chat window, and a corresponding bot response is triggered.
+document.getElementById('send-message').addEventListener('click', sendMessage);
+
+Bot Response Matching:
+The bot matches keywords in the user’s input and provides a response.
+function getBotResponse(userInput) {
+    for (const category in chatbotResponses) {
+        const { keywords, response } = chatbotResponses[category];
+        if (keywords.some(keyword => userInput.includes(keyword.toLowerCase()))) {
+            return response;
+        }
+    }
+    return chatbotResponses["default"].response;
+}
+
+4. Emoji Picker (script.js)
+The emoji picker appears when the emoji button is clicked. The user can select an emoji, which is then appended to the user’s message.
+document.getElementById('emoji-icon').addEventListener('click', function() {
+    const emojiPicker = document.getElementById('emoji-picker');
+    emojiPicker.style.display = emojiPicker.style.display === 'block' ? 'none' : 'block';
+});
+
+
+
 ## License
 
-This project is open-source and free to use. You can modify and distribute the code as per your requirements.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
@@ -90,6 +149,10 @@ DevOps Intern
 [Portfolio](https://sisonke10-byt.github.io/My-Portfolio-Profile/)
 
 ---
+
+## Contact
+For inquiries, feedback, or suggestions, feel free to reach out to Sisonke Boyilani via email:
+Email: sisonkeboyilani@capaciti.org.za
 
 ## Acknowledgments
 
