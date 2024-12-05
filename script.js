@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburgerIcon.style.display = 'block'; 
         closeIcon.style.display = 'none'; 
     });
+
 });
 
 //CONTACTS POPUP
@@ -52,10 +53,9 @@ window.addEventListener('click', function(event) {
 
 //CHATBOT
 
-// Define the chatbot's responses and keywords
 const chatbotResponses = {
     "greeting": {
-        keywords: ["hello", "hi", "hey", "howdy", "good morning", "good evening"],
+        keywords: ["hello", "hi", "hey", "👋", "good morning", "good evening"],
         response: "Hey! What can I do for you?"
     },
     "how_are_you": {
@@ -66,7 +66,10 @@ const chatbotResponses = {
         keywords: ["about you", "who are you", "tell me about yourself"],
         response: "I am Sisonke Boyilani, a recent graduate with a diploma in Information Technology Management, currently working as a DevOps Intern."
     },
-
+    "Location": {
+        keywords: ["address", "where are you located", "province"],
+        response: "I am currently located in the Gauteng province, specifically at 4757 Radebee Street, Extension 2, Orange Farm."
+    },
     "Experience":{
         keywords: ["experience", "where do you currently work"],
         response: "Thanks for asking! While I’m a recent graduate and still building my experience, I am currently working as a DevOps intern. My academic background has also given me a strong foundation in programming, problem-solving, and teamwork. I’m excited to continue learning and applying my skills in the DevOps field. Feel free to ask more about my current projects or skills!"
@@ -98,6 +101,25 @@ const chatbotResponses = {
     "linkedin": {
         keywords: ["linkedin", "connect with me", "social media"],
         response: "Connect with me on LinkedIn [here](https://www.linkedin.com/in/sisonkesamkele)."
+    },
+    "Sharp": {
+        keywords: ["👍"],
+        response: "Great! Do you have anymore questions that i can assist with?"
+    },
+    "laughing": {
+        keywords: ["😂"],
+        response: "Haha, I'm glad I could bring a smile to your face! Feel free to ask me anything about my projects or current internship!"
+    },
+    "sad": {
+        keywords: ["😢"],
+        response: "Oh no, I'm sorry to hear you're feeling down. If there's anything tech-related or career advice you need, I'm here to help! What's going on?"
+    },
+    "idea": {
+        keywords: ["💡"],
+        response: "Ah, you've got an idea! I love brainstorming new solutions. Whether it's a DevOps challenge or tech project, feel free to share, and let's work on it together!"
+    },"No": {
+        keywords: ["👎"],
+        response: "Oh, not quite satisfied? Let me know how I can improve or assist you better. Whether it's my projects, skills, or something tech-related, I'm happy to help!"
     },
     "default": {
         keywords: [],

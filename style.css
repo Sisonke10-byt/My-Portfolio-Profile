@@ -160,6 +160,7 @@ nav .left a:hover {
     display: none;
 }
 
+
 /* Mobile menu styles (max-width 768px) */
 @media (max-width: 768px) {
     .hamburger {
@@ -714,7 +715,7 @@ nav .left a:hover {
     bottom: 20px;
     right: 20px;
     width: 350px;
-    background-color: lightpink;
+    background-color: rgb(230, 170, 179);
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 10px;
@@ -727,6 +728,8 @@ nav .left a:hover {
     flex-direction: column;
     height: 300px;
 }
+
+
 
 #chatbot-messages {
     flex: 1;
@@ -750,10 +753,11 @@ nav .left a:hover {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    padding-left: 20px;
 }
 
 #send-message:hover {
-    background-color: var(--item-color);
+    background-color: var(--link-color);
 }
 
 /* Close button */
@@ -775,9 +779,9 @@ nav .left a:hover {
 #minimize-chatbot {
     background: transparent;
     border: none;
-    font-size: 20px; /* Customize the font size of the minimize button */
+    font-size: 20px; 
     cursor: pointer;
-    margin-right: 30px;  /* Space between minimize and close button */
+    margin-right: 30px;  
     color: white;
     font-weight: 600px;
 }
@@ -814,12 +818,9 @@ nav .left a:hover {
     margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 60%;
-}
+    width: 70%;
+    height: 45px;
 
-.chatbot-icons {
-    display: flex;
-    gap: 10px;
 }
 
 .chatbot-icons button {
@@ -828,27 +829,12 @@ nav .left a:hover {
     color: #333;
     font-size: 20px;
     cursor: pointer;
+    padding-right: 5px;
 }
 
 .chatbot-icons button:hover {
-    color: #0056b3;
+    color: var(--link-color);
 }
-
-
-#send-message {
-    background-color: var(--item-color);
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 15%;
-}
-
-#send-message:hover {
-    background-color: var(--link-color);
-}
-
 
 #emoji-picker {
     display: none;
@@ -905,10 +891,6 @@ nav .left a:hover {
     #send-message {
         font-size: 14px;
         padding: 6px 12px;
-    }
-
-    .chatbot-icons {
-        display: none;
     }
 
     #emoji-picker {
