@@ -46,7 +46,7 @@ Footer: Links to Sisonke's GitHub, LinkedIn, and email 📧.
 - Web3Forms API: For handling form submissions and sending messages directly from the site.
 - Google Fonts: For the Roboto font, used for a modern and clean look.
 
-Installation and Usage 💻
+## **Installation and Usage 💻**
 To use this portfolio website locally on your system, follow these steps:
 
 Clone the repository:
@@ -65,7 +65,7 @@ Replace the myimage.jpg and aboutImage.jpg with your own images 📸.
 Update the content in the <section id="home">, <section id="about">, <section id="skills">, and <section id="contact"> to reflect your own information.
 Update the contact form's API access key (found in the form action URL) with your own Web3Forms API key if needed.
 
-Customization Notes 📝
+## **Customization Notes 📝**
 
 Social Links: Update the social media links (GitHub, LinkedIn, etc.) to point to your own profiles 🌐. You can modify the URL inside the <a> tags under the wordicons and social-links divs.
 
@@ -73,7 +73,7 @@ Contact Form: You may need to update the Web3Forms API access key in the contact
 
 CV Download Link: The download link for the CV points to a file named Sisonke Boyilani- CV (1).docx. You should update this link to point to your own CV file.
 
-Functionality Breakdown 💡
+## **Functionality Breakdown 💡**
 
 Hamburger Menu (script.js) 🍔
 hamburger.addEventListener('click', () => {
@@ -102,15 +102,24 @@ document.getElementById('emoji-icon').addEventListener('click', function() {
     emojiPicker.style.display = emojiPicker.style.display === 'block' ? 'none' : 'block';
 });
 
-License 📄
+## **License 📄**
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Author 👤
+## **Author 👤**
 Sisonke Boyilani
 DevOps Intern
 GitHub
 LinkedIn
 Portfolio
+
+## **Contact 📬**
+For inquiries, feedback, or suggestions, feel free to reach out to Sisonke Boyilani via email:
+Email: sisonkeboyilani@capaciti.org.za
+
+## **Acknowledgments 🙏**
+Font Awesome for the icons.
+Google Fonts for the Roboto font.
+Web3Forms for the contact form API integration.
 
 
 
