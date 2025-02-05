@@ -1,4 +1,4 @@
-Overview ✨
+## **Overview**✨
 
 This project represents a personal portfolio website for Sisonke Boyilani, a DevOps Intern and a recent graduate in Information Technology Management. The portfolio is designed to showcase skills, experience, projects, and contact information. The website also features interactive elements such as a hamburger menu 🍔, contact modal, and a chatbot 🤖 for visitor interaction.
 
@@ -12,7 +12,7 @@ Skills: A showcase of my technical abilities in web development (HTML, CSS, Java
 Contact: A contact form for visitors to reach out to me.
 Footer: Links to Sisonke's GitHub, LinkedIn, and email 📧.
 
-Features 🌟
+## **Features** 🌟
 
 1. Responsive Design: The website is designed to be mobile-friendly 📱, with layouts adjusting to different screen sizes.
 2. Social Media Links: Links to GitHub, LinkedIn, and email for easy access to my profiles and contact information.
@@ -28,7 +28,7 @@ Features 🌟
 - "Tell me about your experience."
 9. Social Media Integration: Social media icons (GitHub, LinkedIn, Email) provide quick links to Sisonke's professional profiles 🌐.
 
-File Structure 📂
+## **File Structure** 📂
 
 |-- index.html # Main HTML file for the portfolio
 |-- style.css # Stylesheet for the website's design
@@ -37,7 +37,7 @@ File Structure 📂
 |-- aboutImage.jpg # Image for the About section
 |-- Sisonke Boyilani- CV (1).docx # CV file for download
 
-Technologies Used 🛠️
+## **Technologies Used 🛠️** 
 
 - HTML5: For the basic structure and content of the website.
 - CSS3: For styling the website, including responsiveness.
