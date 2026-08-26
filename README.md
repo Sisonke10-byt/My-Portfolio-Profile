@@ -122,4 +122,112 @@ Google Fonts for the Roboto font.
 Web3Forms for the contact form API integration.
 
 
+## Overview
+
+This repository contains the personal portfolio website for Sisonke Boyilani. The site is a static HTML/CSS/JavaScript project that showcases professional experience, skills, projects, and contact details. Interactive features include a responsive navigation, a small chatbot with predefined responses, and a contact form integrated with Web3Forms.
+
+Recent edits (summary):
+- Replaced the old CV file (`Sisonke Boyilani- CV (1).docx`) with `Sisonke_Boyilani_CV (3).docx`.
+- Committed and pushed the latest site updates to `main`.
+- Started a local static server for testing and added `server.log` (note: consider removing `server.log` from the repo and adding it to `.gitignore`).
+
+## Quick Start — Run locally
+Clone the repository (if needed) and serve the files from the project folder.
+
+```bash
+git clone https://github.com/Sisonke10-byt/My-Portfolio-Profile.git
+cd My-Portfolio-Profile
+```
+
+Start a simple local server (serves at http://localhost:8000):
+
+```bash
+python3 -m http.server 8000
+```
+
+Run in background and write logs to `server.log`:
+
+```bash
+cd /home/sisonke/My-Portfolio-Profile
+nohup python3 -m http.server 8000 > server.log 2>&1 & echo $!
+```
+
+Stop the server:
+
+```bash
+kill <PID>
+```
+
+Open http://localhost:8000 in your browser to view the site.
+
+## File structure (notable files)
+
+- `index.html` — Main site HTML
+- `style.css` — Site styles
+- `script.js` — Frontend JavaScript (navigation, chatbot interactions)
+- `Images/` — Image assets (profile image `Images/Sisonke.png`, etc.)
+- `Sisonke_Boyilani_CV (3).docx` — Current CV available for download from the site
+- `server.log` — Local server log (created when running server with `nohup`)
+
+If you do not want `server.log` in the repository, remove it and add an entry to `.gitignore`:
+
+```bash
+git rm --cached server.log
+echo "server.log" >> .gitignore
+git add .gitignore
+git commit -m "Ignore server.log"
+git push
+```
+
+## How to update the CV
+
+Option A — Replace with a file from your machine:
+1. Put the new CV file into the project root (via VS Code file explorer or copy into the folder).
+2. Rename it to the desired filename (for example `Sisonke_Boyilani_CV (3).docx`).
+3. Commit and push:
+
+```bash
+git add "Sisonke_Boyilani_CV (3).docx"
+git commit -m "Update CV"
+git push
+```
+
+Option B — Edit the content and generate a new DOCX/PDF locally, then replace as above.
+
+Note: The download link in `index.html` points to the CV filename — update that href if you change the name.
+
+## Committing and pushing changes
+
+After making edits to site files, run:
+
+```bash
+git add .
+git commit -m "Describe your changes"
+git push origin main
+```
+
+## Deployment
+
+This is a static site and can be hosted with GitHub Pages, Netlify, or Vercel. To use GitHub Pages (simple):
+
+1. In the repository settings on GitHub, enable GitHub Pages from the `main` branch (root).
+2. The site will be published at `https://<username>.github.io/<repo>` (allow a few minutes to deploy).
+
+## Troubleshooting
+
+- If your local edits do not appear in the browser, clear cache or hard refresh (Ctrl+Shift+R) or open in an Incognito window.
+- Confirm the server is running and you are visiting `http://localhost:8000`.
+- Check DevTools Console (F12) for JavaScript errors that may affect behavior.
+
+## Contact
+
+For questions or updates, contact:
+- Email: sisonkeboyilani@capaciti.org.za
+- GitHub: https://github.com/Sisonke10-byt
+
+---
+
+Updated to include the latest changes: CV replacement and local server notes.
+
+
 
