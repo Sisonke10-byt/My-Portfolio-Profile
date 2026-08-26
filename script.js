@@ -1,241 +1,132 @@
-/*
- * script.js
- * Author: Sisonke Boyilani
- * Description: Handles the functionality of the modal popup in the contact form.
- * Date: November 2024
- */
+const header = document.querySelector("[data-header]");
+const nav = document.querySelector("[data-nav]");
+const navToggle = document.querySelector("[data-nav-toggle]");
+const chatToggle = document.querySelector("[data-chat-toggle]");
+const chatPanel = document.querySelector("[data-chat-panel]");
+const chatClose = document.querySelector("[data-chat-close]");
+const chatForm = document.querySelector("[data-chat-form]");
+const chatInput = document.querySelector("[data-chat-input]");
+const chatMessages = document.querySelector("[data-chat-messages]");
+const chatPrompts = document.querySelectorAll("[data-chat-prompt]");
 
-//HAMBURGER MENU
-
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const closeIcon = document.getElementById('closeIcon');
-    const navLinks = document.getElementById('navLinks');
-    const hamburgerIcon = document.getElementById('hamburgerIcon');
-
-// Toggle the class 'active' to show/hide navLinks
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active'); // Toggle visibility
-    hamburgerIcon.style.display = navLinks.classList.contains('active') ? 'none' : 'block';
-    closeIcon.style.display = navLinks.classList.contains('active') ? 'block' : 'none';
-});   
-
-});
-
-//CONTACTS POPUP
-
-const popup = document.getElementById('contactPopup');
-const closePopup = document.getElementById('closePopup');
-const contactLink = document.getElementById('contactLink');
-
-
-contactLink.addEventListener('click', function() {
-    popup.style.display = 'flex'; 
-});
-
-
-closePopup.addEventListener('click', function() {
-    popup.style.display = 'none'; 
-});
-
-
-window.addEventListener('click', function(event) {
-    if (event.target === popup) {
-        popup.style.display = 'none';
-    }
-});
-
-//CHATBOT
-
-const chatbotResponses = {
-    "greeting": {
-        keywords: ["hello", "hi", "hey", "👋", "good morning", "good evening"],
-        response: "Hey! What can I do for you?"
-    },
-    "how_are_you": {
-        keywords: ["how are you", "how's it going", "how are things", "what's up"],
-        response: "Great! How can I help you?"
-    },
-    "about_me": {
-        keywords: ["about you", "who are you", "tell me about yourself"],
-        response: "I am Sisonke Boyilani, a recent graduate with a diploma in Information Technology Management, currently working as a DevOps Intern."
-    },
-    "Location": {
-        keywords: ["address", "where are you located", "province"],
-        response: "I am currently located in the Gauteng province, specifically at 4757 Radebee Street, Extension 2, Orange Farm."
-    },
-    "Experience":{
-        keywords: ["experience", "where do you currently work"],
-        response: "Thanks for asking! While I’m a recent graduate and still building my experience, I am currently working as a DevOps intern. My academic background has also given me a strong foundation in programming, problem-solving, and teamwork. I’m excited to continue learning and applying my skills in the DevOps field. Feel free to ask more about my current projects or skills!"
-    },
-    "skills": {
-        keywords: ["skills", "what can you do", "what are your skills"],
-        response: "I am proficient in HTML, CSS, JavaScript, and more. I have strong communication and problem-solving skills, as well as technical expertise in DevOps practices."
-    },
-    "education": {
-        keywords: ["education", "where did you study", "your background"],
-        response: "I graduated with a Diploma in Information Technology Management from Rosebank College."
-    },
-    "contact": {
-        keywords: ["contact", "reach me", "how to contact"],
-        response: "You can reach me at sisonkeboyilani@capaciti.org.za or call +27 765759788."
-    },
-    "cv": {
-        keywords: ["cv", "resume", "curriculum vitae", "download cv"],
-        response: "You can download my CV by clicking the 'Download CV' button in the navigation menu."
-    },
-    "portfolio": {
-        keywords: ["portfolio", "projects", "portfolio profile", "what have you worked on"],
-        response: "You can view my portfolio and projects on GitHub and LinkedIn. I'm currently working on a new project."
-    },
-    "github": {
-        keywords: ["github", "github profile", "repositories"],
-        response: "Check out my GitHub profile [here](https://github.com/Sisonke10-byt) for my latest repositories and projects."
-    },
-    "linkedin": {
-        keywords: ["linkedin", "connect with me", "social media"],
-        response: "Connect with me on LinkedIn [here](https://www.linkedin.com/in/sisonkesamkele)."
-    },
-    "Sharp": {
-        keywords: ["👍"],
-        response: "Great! Do you have anymore questions that i can assist with?"
-    },
-    "laughing": {
-        keywords: ["😂"],
-        response: "Haha, I'm glad I could bring a smile to your face! Feel free to ask me anything about my projects or current internship!"
-    },
-    "sad": {
-        keywords: ["😢"],
-        response: "Oh no, I'm sorry to hear you're feeling down. If there's anything tech-related or career advice you need, I'm here to help! What's going on?"
-    },
-    "idea": {
-        keywords: ["💡"],
-        response: "Ah, you've got an idea! I love brainstorming new solutions. Whether it's a DevOps challenge or tech project, feel free to share, and let's work on it together!"
-    },"No": {
-        keywords: ["👎"],
-        response: "Oh, not quite satisfied? Let me know how I can improve or assist you better. Whether it's my projects, skills, or something tech-related, I'm happy to help!"
-    },
-    "default": {
-        keywords: [],
-        response: "Sorry, I didn't understand that. Can you ask something else?"
-    }
-    
-};
-
-// Function to handle opening and closing the emoji picker
-document.getElementById('emoji-icon').addEventListener('click', function() {
-    const emojiPicker = document.getElementById('emoji-picker');
-    emojiPicker.style.display = emojiPicker.style.display === 'block' ? 'none' : 'block'; // Toggle visibility
-});
-
-// Function to handle emoji selection
-document.querySelectorAll('.emoji').forEach(function(emojiElement) {
-    emojiElement.addEventListener('click', function() {
-        const emoji = emojiElement.getAttribute('data-emoji');
-        const userInput = document.getElementById('user-input');
-        userInput.value += emoji; // Add the emoji to the input field
-        document.getElementById('emoji-picker').style.display = 'none'; // Hide emoji picker after selection
-    });
-});
-
-// Function to send the user message to the chatbot
-function sendMessage() {
-    const userInput = document.getElementById('user-input').value.trim().toLowerCase();
-    if (userInput !== "") {
-        // Display user message
-        displayMessage(userInput, "user");
-
-        // Generate bot response based on keywords
-        let botResponse = getBotResponse(userInput);
-
-        // Display bot response
-        displayMessage(botResponse, "chatbot");
-
-        // Clear the input field after sending the message
-        document.getElementById('user-input').value = "";
-    }
+function updateHeader() {
+  header.classList.toggle("is-scrolled", window.scrollY > 20);
 }
 
-// Function to find bot response based on user input
-function getBotResponse(userInput) {
-    // Check if any response category matches based on keywords
-    for (const category in chatbotResponses) {
-        const { keywords, response } = chatbotResponses[category];
-        
-        // Check if the user's input contains any of the keywords
-        if (keywords.some(keyword => userInput.includes(keyword.toLowerCase()))) {
-            return response;
-        }
-    }
-    return chatbotResponses["default"].response;
+navToggle.addEventListener("click", () => {
+  const isOpen = nav.classList.toggle("is-open");
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+  header.classList.toggle("is-open", isOpen);
+});
+
+nav.addEventListener("click", (event) => {
+  if (event.target.matches("a")) {
+    nav.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    header.classList.remove("is-open");
+  }
+});
+
+window.addEventListener("scroll", updateHeader, { passive: true });
+updateHeader();
+
+const chatbotResponses = [
+  {
+    keywords: ["hello", "hi", "hey", "morning", "evening"],
+    response: "Hi, I am Sisonke's portfolio assistant. You can ask me about his skills, education, contact details, CV, GitHub, or LinkedIn.",
+  },
+  {
+    keywords: ["skill", "skills", "tools", "technology", "tech stack"],
+    response: "Sisonke works with HTML, CSS, JavaScript, Git, Docker basics, CI/CD fundamentals, automation basics, and cloud learning. He also brings communication, teamwork, and problem-solving strengths.",
+  },
+  {
+    keywords: ["devops", "intern", "automation", "ci", "cd", "docker", "cloud"],
+    response: "Sisonke is an aspiring DevOps Engineer and DevOps intern, focused on automation, CI/CD pipelines, Git workflows, Docker basics, cloud fundamentals, and reliable software delivery.",
+  },
+  {
+    keywords: ["education", "study", "college", "school", "qualification", "diploma"],
+    response: "Sisonke completed a Diploma in Information Technology Management at Rosebank College from 2020 to 2023, and completed his National Senior Certificate at Indwe High School in 2019.",
+  },
+  {
+    keywords: ["contact", "email", "phone", "call", "reach"],
+    response: "You can contact Sisonke at sisonkeboyilani@capaciti.org.za or call +27 76 575 9788. The contact form on this page is also ready to use.",
+  },
+  {
+    keywords: ["github", "repo", "repositories", "code"],
+    response: "Sisonke's GitHub profile is https://github.com/Sisonke10-byt.",
+  },
+  {
+    keywords: ["linkedin", "connect", "profile"],
+    response: "You can connect with Sisonke on LinkedIn at https://www.linkedin.com/in/sisonkesamkele.",
+  },
+  {
+    keywords: ["cv", "resume", "download"],
+    response: "Use the Download CV button in the navigation bar to download Sisonke's CV.",
+  },
+  {
+    keywords: ["project", "portfolio", "work"],
+    response: "This portfolio highlights Sisonke's personal portfolio redesign, DevOps learning focus, and responsive frontend interface building.",
+  },
+];
+
+function setChatOpen(isOpen) {
+  if (!chatPanel || !chatToggle) return;
+  chatPanel.hidden = !isOpen;
+  chatToggle.setAttribute("aria-expanded", String(isOpen));
+  if (isOpen) {
+    chatInput?.focus();
+  }
 }
 
-// Function to display a message in the chat window
-function displayMessage(message, sender) {
-    const messagesDiv = document.getElementById('chatbot-messages');
-    const messageDiv = document.createElement('div');
-    
-    if (sender === "user") {
-        messageDiv.classList.add('chatbot-message');
-        messageDiv.textContent = "You: " + message;
-    } else if (sender === "chatbot") {
-        messageDiv.classList.add('chatbot-response');
-        messageDiv.textContent = "Chatbot: " + message;
-    }
+function getChatbotResponse(message) {
+  const normalizedMessage = message.toLowerCase();
+  const match = chatbotResponses.find((item) =>
+    item.keywords.some((keyword) => normalizedMessage.includes(keyword))
+  );
 
-    messagesDiv.appendChild(messageDiv);
-    messagesDiv.scrollTop = messagesDiv.scrollHeight; // Scroll to bottom
+  return match
+    ? match.response
+    : "I can help with questions about Sisonke's skills, DevOps background, education, projects, CV, GitHub, LinkedIn, or contact details.";
 }
 
-// Function to clear chat history
-function clearHistory() {
-    const messagesDiv = document.getElementById('chatbot-messages');
-    messagesDiv.innerHTML = ""; // Clear the messages div
+function addChatMessage(message, type) {
+  if (!chatMessages) return;
+  const messageElement = document.createElement("div");
+  messageElement.className = `chat-message ${type === "user" ? "user-message" : "bot-message"}`;
+  messageElement.textContent = message;
+  chatMessages.appendChild(messageElement);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-// Function to minimize the chatbot
-function minimizeChatbot() {
-    document.getElementById('chatbot-section').style.display = 'none';
-    document.getElementById('chatbot-icon').style.display = 'block';
+function sendChatMessage(message) {
+  const trimmedMessage = message.trim();
+  if (!trimmedMessage) return;
+
+  addChatMessage(trimmedMessage, "user");
+  addChatMessage(getChatbotResponse(trimmedMessage), "bot");
 }
 
-// Event listeners
-document.getElementById('send-message').addEventListener('click', sendMessage);
-document.getElementById('user-input').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        sendMessage();
-    }
+chatToggle?.addEventListener("click", () => {
+  setChatOpen(chatPanel?.hidden ?? true);
 });
 
-// Open the chatbot when clicking the chatbot icon
-document.getElementById('chatbot-icon').addEventListener('click', function() {
-    document.getElementById('chatbot-section').style.display = 'block';
-    document.getElementById('chatbot-icon').style.display = 'none';
+chatClose?.addEventListener("click", () => {
+  setChatOpen(false);
 });
 
-// Close the chatbot and clear history
-document.getElementById('close-chatbot').addEventListener('click', function() {
-    clearHistory(); // Clear the chat history
-    document.getElementById('chatbot-section').style.display = 'none';
-    document.getElementById('chatbot-icon').style.display = 'block';
+chatForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!chatInput) return;
+  sendChatMessage(chatInput.value);
+  chatInput.value = "";
 });
 
-// Minimize the chatbot (keep history intact)
-document.getElementById('minimize-chatbot').addEventListener('click', function() {
-    minimizeChatbot();
+chatPrompts.forEach((prompt) => {
+  prompt.addEventListener("click", () => {
+    const promptText = prompt.getAttribute("data-chat-prompt") || "";
+    setChatOpen(true);
+    sendChatMessage(promptText);
+  });
 });
 
-document.getElementById('send-message').addEventListener('click', sendMessage);
-document.getElementById('user-input').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        sendMessage();
-    }
-});
-document.getElementById('chatbot-icon').addEventListener('click', function() {
-    document.getElementById('chatbot-section').style.display = 'block';
-    document.getElementById('chatbot-icon').style.display = 'none';
-});
-document.getElementById('close-chatbot').addEventListener('click', function() {
-    document.getElementById('chatbot-section').style.display = 'none';
-    document.getElementById('chatbot-icon').style.display = 'block';
-});
+window.__portfolioChatReady = true;

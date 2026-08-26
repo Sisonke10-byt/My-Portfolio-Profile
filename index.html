@@ -1,296 +1,312 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sisonke Boyilani | DevOps Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio website for Sisonke Boyilani, an aspiring DevOps engineer and frontend developer."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#home" aria-label="Sisonke Boyilani home">
+        <span class="brand-mark">SB</span>
+        <span>Sisonke Boyilani</span>
+      </a>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <nav class="site-nav" data-nav>
+        <a href="#profile">Profile</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-pill" href="./Sisonke Boyilani- CV (1).docx" download>Download CV</a>
+      </nav>
+    </header>
 
-    <link rel="stylesheet" href="style.css">
-    
-    <title>Sisonke Boyilani's Portfolio</title>
-</head>
-<body>
-
-    <!--NAVBAR-->
-    <nav>
-        <div class="left">
-            <a href="index.html">SISONKE</a>
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img src="Images/Sisonke.png" alt="" />
         </div>
-
-        
-         <div class="hamburger" id="hamburger">
-            <i class="fas fa-bars" id="hamburgerIcon"></i> 
-            <i class="fas fa-times" id="closeIcon" style="display:none;"></i> 
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">DevOps Intern - Frontend Builder</p>
+          <h1 id="hero-title">Sisonke builds reliable, useful digital experiences.</h1>
+          <p class="hero-copy">
+            I am an aspiring DevOps Engineer with a foundation in IT management, cloud fundamentals, automation, and
+            responsive web development.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="#work">View Work</a>
+            <a class="button button-secondary" href="#contact">Contact Me</a>
+          </div>
         </div>
+        <dl class="hero-stats" aria-label="Portfolio highlights">
+          <div>
+            <dt>IT</dt>
+            <dd>Management Graduate</dd>
+          </div>
+          <div>
+            <dt>DevOps</dt>
+            <dd>Internship Focus</dd>
+          </div>
+          <div>
+            <dt>Web</dt>
+            <dd>Frontend Skills</dd>
+          </div>
+        </dl>
+      </section>
 
-        
-        <div class="right" id="navLinks">
-
-            
-            <a href="#about">
-                <i class="fa-regular fa-pen-to-square"></i>
-                <span>About</span>
-            </a> 
-
-            <a href="#skills">
-                <i class="fa-solid fa-code"></i>
-                <span>Skills</span>
-            </a>
-            
-            <a href="#contact">
-                <i class="fa-solid fa-envelope"></i>
-                <span>Contact</span>
-            </a>
-
-            <a href="./Sisonke Boyilani- CV (1).docx" download="Sisonke Boyilani- CV (1).docx" class="download-cv">
-                <i class="fa-solid fa-download"></i>
-                <span>Download CV</span>
-            </a>
-        </div>
-    </nav>
-
-    <!--HOME-->
-    <section class="home-section">
-        <div class="text">
-            <h1>Hello, I'm Sisonke</h1>
-            <h2><span class="devops">An aspiring DevOps Engineer</span></h2>
-            <p>I’m a DevOps Engineer Intern with a growing passion for automating processes, managing cloud infrastructures, and enhancing software delivery pipelines. 
-                <ul>
-                    <li>Currently, I’m focused on expanding my hands-on experience with DevOps practices and tools, while exploring the world of continuous integration, containerization, and infrastructure automation.</li>
-                    <li>I am proficient in web development technologies like HTML, CSS, and JavaScript.</li>
-                    <li>I adapt quickly to new environments, technologies, and project requirements, making me well suited to fast-paced and evolving tech roles.</li>
-                </ul>
+      <section class="section profile-section" id="profile" aria-labelledby="profile-title">
+        <div class="section-label">Profile</div>
+        <div class="profile-grid">
+          <div>
+            <h2 id="profile-title">I connect IT foundations with automation, teamwork, and clean web interfaces.</h2>
+          </div>
+          <div class="profile-copy">
+            <p>
+              I am a recent graduate with a Diploma in Information Technology Management from Rosebank College. My
+              background gave me a strong foundation in IT infrastructure, systems management, and network
+              administration.
             </p>
-            <div class="wordicons">
-            <a href="https://github.com/Sisonke10-byt" target="_blank" rel="nooper no-referrer">
-                <i class="fa-brands fa-github"></i>  
-            </a>
-    
-            <a href="https://www.linkedin.com/in/sisonkesamkele" target="_blank" rel="nooper no-referrer">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-    
-            <a href="#contact" class="social-link email" target="_blank" rel="nooper no-referrer">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
+            <p>
+              As a DevOps intern, I am growing my skills in cloud computing, automation, CI/CD pipelines, Git, Docker,
+              and collaborative software delivery.
+            </p>
+          </div>
         </div>
+      </section>
+
+      <section class="section about-card-section" aria-label="Education and contact summary">
+        <article class="profile-card">
+          <img src="Images/Sisonke.png" alt="Sisonke Boyilani" />
+          <div>
+            <p class="eyebrow">About Me</p>
+            <h2>Sisonke Boyilani</h2>
+            <p>
+              I enjoy solving problems, learning new technologies, and helping teams improve the way software is built,
+              tested, and delivered.
+            </p>
+          </div>
+        </article>
+        <div class="education-grid">
+          <article>
+            <span>2020 - 2023</span>
+            <h3>Diploma in Information Technology Management</h3>
+            <p>Rosebank College</p>
+          </article>
+          <article>
+            <span>2019</span>
+            <h3>National Senior Certificate</h3>
+            <p>Indwe High School</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section skills-section" id="skills" aria-labelledby="skills-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-label">Skills</div>
+            <h2 id="skills-title">What I work with</h2>
+          </div>
+          <p>
+            A practical mix of technical, operational, and collaboration skills for web projects and DevOps learning.
+          </p>
         </div>
 
-        <div class="picture">
-            <img src="myimage.jpg" alt="my image">
+        <div class="skill-grid">
+          <article class="skill-card">
+            <span class="skill-icon" aria-hidden="true">DV</span>
+            <h3>DevOps & Tools</h3>
+            <p>CI/CD fundamentals, Docker, Git, automation basics, and cloud learning.</p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-icon" aria-hidden="true">FE</span>
+            <h3>Frontend Development</h3>
+            <p>HTML, CSS, JavaScript, responsive layouts, and interactive web pages.</p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-icon" aria-hidden="true">PS</span>
+            <h3>Problem Solving</h3>
+            <p>Analytical thinking for troubleshooting, improving processes, and learning quickly.</p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-icon" aria-hidden="true">TW</span>
+            <h3>Teamwork</h3>
+            <p>Clear communication, collaboration, adaptability, and cross-functional support.</p>
+          </article>
         </div>
+      </section>
+
+      <section class="section work-section" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-label">Selected Work</div>
+            <h2 id="work-title">Project focus areas</h2>
+          </div>
+          <a class="text-link" href="https://github.com/Sisonke10-byt" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+
+        <div class="project-list">
+          <article class="project-card project-card-large">
+            <div class="project-visual visual-one" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="project-content">
+              <p class="project-type">Portfolio Website</p>
+              <h3>Personal portfolio redesign</h3>
+              <p>
+                A responsive portfolio profile built to present my background, education, skills, and contact details in
+                a professional way.
+              </p>
+              <div class="tag-row">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual visual-two" aria-hidden="true">
+              <span></span>
+              <span></span>
+            </div>
+            <div class="project-content">
+              <p class="project-type">DevOps Learning</p>
+              <h3>Automation and delivery practice</h3>
+              <p>Building confidence with Git, Docker, deployment flows, and continuous improvement habits.</p>
+              <div class="tag-row">
+                <span>Git</span>
+                <span>Docker</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual visual-three" aria-hidden="true">
+              <span></span>
+              <span></span>
+            </div>
+            <div class="project-content">
+              <p class="project-type">Frontend</p>
+              <h3>Responsive interface building</h3>
+              <p>Creating clean layouts that work across desktop and mobile screens with accessible structure.</p>
+              <div class="tag-row">
+                <span>Responsive</span>
+                <span>UI</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section process-section" aria-labelledby="process-title">
+        <div class="section-label">Approach</div>
+        <h2 id="process-title">How I keep improving</h2>
+        <div class="process-track">
+          <article>
+            <span>01</span>
+            <h3>Learn</h3>
+            <p>Understand the technology, workflow, and problem before rushing into implementation.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Build</h3>
+            <p>Apply concepts through small projects, practical tasks, and repeatable workflows.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Test</h3>
+            <p>Review behavior, fix issues, and improve quality across different environments.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Collaborate</h3>
+            <p>Communicate clearly, ask good questions, and keep learning from team feedback.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-inner">
+          <div>
+            <p class="eyebrow">Available for opportunities</p>
+            <h2 id="contact-title">Let's connect and build something useful.</h2>
+            <div class="contact-links">
+              <a href="mailto:sisonkeboyilani@capaciti.org.za">sisonkeboyilani@capaciti.org.za</a>
+              <a href="tel:+27765759788">+27 76 575 9788</a>
+              <a href="https://www.linkedin.com/in/sisonkesamkele" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+          </div>
+
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="2f180413-f629-4fe6-bcb9-11106dcfb53f" />
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required placeholder="Enter full name" />
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required placeholder="Enter email" />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required placeholder="Write your message"></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Copyright 2026 Sisonke Boyilani. Built with care.</p>
+      <div class="footer-links">
+        <a href="https://github.com/Sisonke10-byt" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/sisonkesamkele" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="#home">Back to top</a>
+      </div>
+    </footer>
+
+    <button class="chat-launcher" type="button" aria-expanded="false" aria-controls="chatbot-panel" data-chat-toggle>
+      <span aria-hidden="true">?</span>
+      <span>Ask Sisonke</span>
+    </button>
+
+    <section class="chatbot-panel" id="chatbot-panel" aria-label="Portfolio chatbot" data-chat-panel hidden>
+      <div class="chatbot-header">
+        <div>
+          <p class="eyebrow">Portfolio Assistant</p>
+          <h2>Ask about Sisonke</h2>
+        </div>
+        <button class="chat-close" type="button" aria-label="Close chatbot" data-chat-close>×</button>
+      </div>
+
+      <div class="chatbot-messages" data-chat-messages aria-live="polite">
+        <div class="chat-message bot-message">
+          Hi, I can answer quick questions about my skills, education, DevOps focus, contact details, CV, GitHub, and
+          LinkedIn.
+        </div>
+      </div>
+
+      <div class="chatbot-prompts" aria-label="Suggested questions">
+        <button type="button" data-chat-prompt="What skills do you have?">Skills</button>
+        <button type="button" data-chat-prompt="How can I contact you?">Contact</button>
+        <button type="button" data-chat-prompt="Where can I view your GitHub?">GitHub</button>
+      </div>
+
+      <form class="chatbot-form" data-chat-form>
+        <label class="sr-only" for="chatbot-input">Ask a portfolio question</label>
+        <input id="chatbot-input" type="text" placeholder="Ask a quick question..." autocomplete="off" data-chat-input />
+        <button type="submit">Send</button>
+      </form>
     </section>
 
-<!--ABOUT-->
-
-<section id="about" class="about-section  anchor-link">
-    <h2>ABOUT</h2>
-
-    <div class="aboutme">
-        <div class="information">
-            <img src="aboutImage.jpg" alt="Sisonke Boyilani">
-            <h3>Sisonke Boyilani</h3>
-
-            <div class="text">
-                <p>
-                    I am a recent graduate with a diploma in Information Technology Management, passionate about technology and its potential to drive business growth and innovation. Throughout my academic journey, I developed a strong foundation in IT infrastructure, systems management, and network administration, which has equipped me with the skills necessary to thrive in the fast-paced world of DevOps.
-                    <br><br>Currently, I am working as a DevOps Intern, where I have the opportunity to apply my knowledge in cloud computing, automation, and continuous integration/continuous delivery (CI/CD) pipelines. I am eager to learn and grow in the field, collaborating with cross-functional teams to enhance the efficiency and reliability of software development processes. I thrive in dynamic environments, always looking for opportunities to leverage the latest technologies to optimize operations. My goal is to continue developing my skills and contributing to innovative solutions that empower organizations to scale and succeed in the digital age.
-                </p>
-            </div>
-        </div>
-
-        <div class="text">
-            <h2>Education</h2>
-            <div class="education">
-                <div class="education-item">
-                    <h4>Diploma in Information Technology Management</h4>
-                    <p><strong>Institution:</strong> Rosebank College</p>
-                    <p><strong>Duration:</strong> 2020 - 2023</p>
-                </div>
-
-                <div class="education-item">
-                    <h4>National Senior Certificate</h4>
-                    <p><strong>Institution:</strong> Indwe High School</p>
-                    <p><strong>Duration:</strong> 2019 - 2019</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--SKILLS -->
-
-<section id="skills" class="Myskills-section anchor-link">
-    <h2>SKILLS</h2>
-    <div class="text">
-        Skilled in HTML, CSS, and JavaScript, with a strong foundation in building responsive, user-friendly websites. Proficient in using HTML to structure content, CSS to create visually engaging layouts, and JavaScript to add interactivity and dynamic functionality.<br>
-        Experienced in responsive web design, ensuring seamless user experiences across devices. Capable of developing modern, interactive websites from concept to completion.
-    </div>
-
-    <div class="skills-container">
-
-        <!-- Soft Skills Section -->
-        <div class="skills-category">
-            <h3>Soft Skills</h3>
-            <div class="skills-icons">
-                <div class="skill-icon">
-                    <i class="fas fa-comments" style="color: #ff9800;"></i>
-                    <p>Communication</p>
-                </div>
-                <div class="skill-icon">
-                    <i class="fas fa-lightbulb" style="color: #ffeb3b;"></i>
-                    <p>Problem-Solving</p>
-                </div>
-                <div class="skill-icon">
-                    <i class="fas fa-users" style="color: #4caf50;"></i>
-                    <p>Teamwork</p>
-                </div>
-                <div class="skill-icon">
-                    <i class="fas fa-sync-alt" style="color: #8bc34a;"></i>
-                    <p>Adaptability</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Technical Skills Section -->
-        <div class="skills-category">
-            <h3>Technical Skills</h3>
-            <div class="skills-icons">
-                <div class="skill-icon">
-                    <i class="fa-brands fa-html5" style="font-size: 80px;"></i>
-                    <span>HTML</span>
-                </div>
-                <div class="skill-icon">
-                    <i class="fa-brands fa-css3-alt" style="font-size: 80px;"></i>
-                    <span>CSS</span>
-                </div>
-                <div class="skill-icon">
-                    <i class="fa-brands fa-js" style="font-size: 80px;"></i>
-                    <span>JAVASCRIPT</span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-<!--CONTACT-->
-
-<section id="contact" class="reach-section anchor-link">
-    <h2>CONTACT</h2>
-
-    <div class="mycontact">
-        <div class="text">
-            <p>I’d love to hear from you! Whether you’re interested in collaborating on a project, discussing potential opportunities,<br>
-                or just want to connect, feel free to reach out.</p>
-            <a href="javascript:void(0);" id="contactLink">Click here for contact information</a>
-        </div>
-    </div>
-
-    <div id="contactPopup" class="popup">
-        <div class="popup-content">
-            <span id="closePopup" class="close">&times;</span>
-            <h2>Contact Information</h2>
-            <p>Email: <a href="mailto:sisonkeboyilani@capaciti.org.za">sisonkeboyilani@capaciti.org.za</a></p>
-            <p>Phone: <a href="tel:+1234567890">+27 765759788</a></p>
-            <p>Address: 4757 Radebee Street, Ext2, Orange Farm</p>
-        </div>
-    </div>
-
-    <div id="forms" class="MyForm">
-        <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="2f180413-f629-4fe6-bcb9-11106dcfb53f">
-            
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" pattern="A-Z" required placeholder="Enter Full Name">
-
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required placeholder="Enter email">
-
-            <label for="Message">Message</label>
-            <textarea id="Message" name="Message" cols="30" rows="10" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-</section>
-
-<!-- FOOTER-->
-
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2024 Sisonke Boyilani. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://github.com/Sisonke10-byt" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/sisonkesamkele" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="#contact" class="email">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-        </div>
-    </div>
-</footer>
-
-
-<!-- CHATBOT -->
-
-<div id="chatbot-icon" class="chat-icon">
-    <i class="fa fa-comments"></i>
-</div>
-
-
-<div id="chatbot-section" style="display:none;">
-    <div class="chatbot-header">
-        <h3>Chat with Me</h3>
-        <button id="minimize-chatbot">_</button>
-        <button id="close-chatbot" class="close-chatbot-btn">&times;</button>
-    </div>
-    <div id="chatbot-window">
-        <div id="chatbot-messages">
-        </div>
-
-       
-
-        <div class="chatbot-input-area">
-            <input type="text" id="user-input" placeholder="Ask me something..." />
-            
-            
-            <div class="chatbot-icons">
-                
-                <button id="emoji-icon" title="Insert Emoji">
-                    <i class="fas fa-smile"></i>
-                </button>
-            </div>
-
-            
-            <button id="send-message">Send</button>
-        </div>
-    </div>
-
-    
-    <div id="emoji-picker" class="emoji-picker">
-        <span class="emoji" data-emoji="👋">👋</span>
-        <span class="emoji" data-emoji="👍">👍</span>
-        <span class="emoji" data-emoji="😂">😂</span>
-        <span class="emoji" data-emoji="😢">😢</span>
-        <span class="emoji" data-emoji="💡">💡</span>
-        <span class="emoji" data-emoji="👎">👎</span>
-
-        
-    </div>
-</div>
-
-<script src="script.js"></script>
-</body>
+    <script src="script.js?v=2"></script>
+  </body>
 </html>
-
