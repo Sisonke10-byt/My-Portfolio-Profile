@@ -126,7 +126,7 @@ kill <PID>
 
 ## Contact
 
-Email: sisonkeboyilani@capaciti.org.za
+Email: sisonkesamkele@gmail.com 
 GitHub: https://github.com/Sisonke10-byt
 
 ---
